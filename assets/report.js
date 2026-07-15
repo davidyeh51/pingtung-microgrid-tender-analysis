@@ -1,4 +1,12 @@
 (() => {
+  const nav = document.querySelector('.topbar .nav');
+  if (nav && !nav.querySelector('a[href="part5.html"]')) {
+    const link = document.createElement('a');
+    link.href = 'part5.html';
+    link.textContent = 'Part 5 升級';
+    nav.append(link);
+  }
+
   const links = [...document.querySelectorAll('.local-toc a')];
   const sections = [...document.querySelectorAll('.report-section[id]')];
   if ('IntersectionObserver' in window && links.length && sections.length) {
@@ -11,7 +19,8 @@
     }, { rootMargin: '-18% 0px -68% 0px', threshold: [0, .2, .6] });
     sections.forEach(section => observer.observe(section));
   }
-  const top = document.querySelector('[data-top]');
+
+  const top = document.querySelector('[data-top], .top-button');
   if (top) {
     addEventListener('scroll', () => top.classList.toggle('show', scrollY > 700), { passive: true });
     top.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
