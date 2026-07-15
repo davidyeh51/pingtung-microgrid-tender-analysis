@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>屏東防災微電網標案 · 投標分析報告</title>
+<meta name="description" content="屏東縣滿州國中及三地門防災微電網建置計畫｜投標者視角分析、需求重點摘要與特別注意事項">
+<style>
+:root{
+  --bg:#faf7f2; --surface:#ffffff; --ink:#1f2a2e; --ink-soft:#4a5a5f; --line:#e7ded2;
+  --teal:#0f8a7e; --teal-dark:#0a6b61; --teal-wash:#e6f3f0;
+  --coral:#e2664b; --coral-wash:#fbeae4;
+  --amber:#d99a2b; --amber-wash:#fbf1dc;
+  --danger:#c0392b; --danger-wash:#fbe9e6;
+  --shadow:0 1px 2px rgba(31,42,46,.05),0 6px 20px rgba(31,42,46,.06);
+  --radius:14px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#12181a; --surface:#1a2325; --ink:#e9efec; --ink-soft:#a3b3b1; --line:#2b393b;
+    --teal:#38b2a3; --teal-dark:#5fc7ba; --teal-wash:#12312d;
+    --coral:#f0876e; --coral-wash:#3a221b;
+    --amber:#e6b455; --amber-wash:#3a2f16;
+    --danger:#f0796a; --danger-wash:#3a1f1c;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 26px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="light"]{
+  --bg:#faf7f2;--surface:#fff;--ink:#1f2a2e;--ink-soft:#4a5a5f;--line:#e7ded2;
+  --teal:#0f8a7e;--teal-dark:#0a6b61;--teal-wash:#e6f3f0;--coral:#e2664b;--coral-wash:#fbeae4;
+  --amber:#d99a2b;--amber-wash:#fbf1dc;--danger:#c0392b;--danger-wash:#fbe9e6;
+  --shadow:0 1px 2px rgba(31,42,46,.05),0 6px 20px rgba(31,42,46,.06);
+}
+:root[data-theme="dark"]{
+  --bg:#12181a;--surface:#1a2325;--ink:#e9efec;--ink-soft:#a3b3b1;--line:#2b393b;
+  --teal:#38b2a3;--teal-dark:#5fc7ba;--teal-wash:#12312d;--coral:#f0876e;--coral-wash:#3a221b;
+  --amber:#e6b455;--amber-wash:#3a2f16;--danger:#f0796a;--danger-wash:#3a1f1c;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 26px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px;
+  font-feature-settings:"palt";overflow-x:hidden;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+a{color:var(--teal-dark);text-decoration:none}
+
+/* ---- top bar ---- */
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:14px;height:56px;overflow-x:auto;scrollbar-width:none}
+.topbar .wrap::-webkit-scrollbar{display:none}
+.topbar .brand{font-weight:800;color:var(--teal-dark);white-space:nowrap;letter-spacing:.02em}
+.topbar nav{display:flex;gap:4px;margin-left:auto}
+.topbar nav a{font-size:13.5px;color:var(--ink-soft);padding:6px 10px;border-radius:8px;white-space:nowrap}
+.topbar nav a:hover{background:var(--teal-wash);color:var(--teal-dark)}
+
+/* ---- hero ---- */
+.hero{padding:60px 0 40px;position:relative}
+.hero:before{content:"";position:absolute;inset:0;background:
+  radial-gradient(60% 80% at 88% 0%,var(--teal-wash) 0%,transparent 60%);opacity:.7;z-index:-1}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;
+  color:var(--coral);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}
+.kicker:before{content:"";width:26px;height:2px;background:var(--coral)}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.25;font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--teal-dark);
+  background:linear-gradient(transparent 62%,var(--amber-wash) 62%)}
+.hero .lede{font-size:clamp(16px,2.4vw,19px);color:var(--ink-soft);margin-top:18px;max-width:70ch}
+.hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:999px;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink-soft)}
+.tag b{color:var(--ink)}
+
+/* ---- snapshot grid ---- */
+.snap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 8px}
+.snap .cell{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 16px 15px;box-shadow:var(--shadow)}
+.snap .cell .n{font-size:clamp(19px,2.6vw,25px);font-weight:800;color:var(--teal-dark);line-height:1.15}
+.snap .cell .n small{font-size:13px;font-weight:700;color:var(--ink-soft)}
+.snap .cell .l{font-size:12.5px;color:var(--ink-soft);margin-top:5px}
+.snap .cell.alt .n{color:var(--coral)}
+@media(max-width:720px){.snap{grid-template-columns:repeat(2,1fr)}}
+
+/* ---- section ---- */
+section{padding:42px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:8px}
+.sec-num{font-size:13px;font-weight:800;color:var(--coral);letter-spacing:.05em;
+  border:1.5px solid var(--coral);border-radius:8px;padding:2px 8px;flex:none}
+.sec-head h2{font-size:clamp(21px,3.4vw,28px);font-weight:800;letter-spacing:-.01em;line-height:1.3}
+.sec-sub{color:var(--ink-soft);margin:0 0 24px;font-size:15.5px;max-width:74ch}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 24px;box-shadow:var(--shadow);margin-bottom:18px}
+.card h3{font-size:17px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:9px}
+.dot{width:9px;height:9px;border-radius:3px;flex:none}
+.dot.t{background:var(--teal)} .dot.c{background:var(--coral)} .dot.a{background:var(--amber)}
+
+/* two-col */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+
+ul.clean{list-style:none;display:flex;flex-direction:column;gap:9px}
+ul.clean li{position:relative;padding-left:22px;font-size:15px}
+ul.clean li:before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;
+  border-radius:2px;background:var(--teal)}
+ul.clean.c li:before{background:var(--coral)}
+ul.clean.a li:before{background:var(--amber)}
+ul.clean li b{color:var(--ink);font-weight:700}
+
+/* table */
+.twrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:560px;background:var(--surface);font-size:14.5px}
+th,td{padding:12px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--teal-wash);color:var(--teal-dark);font-weight:800;font-size:13.5px;
+  position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+td.spec{font-weight:700;color:var(--ink)}
+.mut{color:var(--ink-soft)}
+.hl-a{color:var(--coral);font-weight:800}
+.hl-b{color:var(--teal-dark);font-weight:800}
+
+/* risk items */
+.risk{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--danger);
+  border-radius:12px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
+.risk .rh{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.risk .rh .lvl{font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;
+  background:var(--danger-wash);color:var(--danger);letter-spacing:.04em;flex:none}
+.risk.mid{border-left-color:var(--amber)} .risk.mid .lvl{background:var(--amber-wash);color:var(--amber)}
+.risk.info{border-left-color:var(--teal)} .risk.info .lvl{background:var(--teal-wash);color:var(--teal-dark)}
+.risk h3{font-size:16px;font-weight:800}
+.risk p{font-size:14.5px;color:var(--ink-soft);margin-top:2px}
+.risk p b{color:var(--ink)}
+
+/* timeline */
+.tl{position:relative;padding-left:26px;margin-top:8px}
+.tl:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .ev{position:relative;padding:0 0 20px 8px}
+.tl .ev:before{content:"";position:absolute;left:-24px;top:4px;width:14px;height:14px;border-radius:50%;
+  background:var(--surface);border:3px solid var(--teal)}
+.tl .ev.key:before{border-color:var(--coral);background:var(--coral)}
+.tl .ev .d{font-size:13px;font-weight:800;color:var(--teal-dark)}
+.tl .ev.key .d{color:var(--coral)}
+.tl .ev .t{font-size:15px;margin-top:1px}
+.tl .ev .t b{font-weight:700}
+
+/* checklist */
+.check{columns:2;column-gap:26px}
+@media(max-width:680px){.check{columns:1}}
+.check .it{break-inside:avoid;display:flex;gap:10px;padding:8px 0;font-size:14.5px;align-items:flex-start}
+.check .it .bx{width:18px;height:18px;border:2px solid var(--teal);border-radius:5px;flex:none;margin-top:2px}
+
+.callout{background:var(--coral-wash);border:1px solid color-mix(in srgb,var(--coral) 30%,transparent);
+  border-radius:var(--radius);padding:16px 20px;font-size:14.5px;margin:6px 0 20px}
+.callout b{color:var(--coral)}
+
+footer{border-top:1px solid var(--line);padding:34px 0 60px;color:var(--ink-soft);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.disc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+  font-size:12.5px;color:var(--ink-soft);margin-top:18px;line-height:1.6}
+
+.themebtn{margin-left:8px;background:var(--surface);border:1px solid var(--line);color:var(--ink-soft);
+  width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:15px;flex:none}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="brand">屏東防災微電網 · 投標分析</span>
+  <nav>
+    <a href="#snap">速覽</a>
+    <a href="#angle">投標視角</a>
+    <a href="#need">需求重點</a>
+    <a href="#time">時程</a>
+    <a href="#watch">注意事項</a>
+    <a href="#check">檢核表</a>
+  </nav>
+  <button class="themebtn" id="themebtn" title="切換深/淺色">◐</button>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">政府採購 · 最有利標 · 投標者視角</span>
+  <h1>兩案一標、預算 <em>3,363.5 萬</em>，成敗關鍵在<br>「115/11/30 完工死線」與跨文件規格一致性</h1>
+  <p class="lede">
+    屏東縣政府受經濟部能源署委託，代辦「滿州國中教學大樓」與「三地門鄉體育館暨多功能活動中心」兩處
+    小型防災微電網建置。本報告以<strong>投標廠商角度</strong>拆解招標文件，摘要需求規格，並列出足以影響得標與履約的特別注意事項。
+  </p>
+  <div class="meta">
+    <span class="tag">案號 <b>Danas-F-02-04-16 / -17</b></span>
+    <span class="tag">招標機關 <b>屏東縣政府</b></span>
+    <span class="tag">洽辦機關 <b>經濟部能源署</b></span>
+    <span class="tag">決標方式 <b>最有利標 · 序位法</b></span>
+    <span class="tag">性質 <b>財物採購（購買+定製）</b></span>
+  </div>
+</div></header>
+
+<div class="wrap">
+<section id="snap" style="border-top:none;padding-top:8px">
+  <div class="snap">
+    <div class="cell"><div class="n">3,363.5<small> 萬</small></div><div class="l">預算總額（含稅）<br>滿州 1,729.8 萬｜三地門 1,633.7 萬</div></div>
+    <div class="cell alt"><div class="n">115/11/30</div><div class="l">建置完工死線<br>再 1 個月內驗收點交</div></div>
+    <div class="cell"><div class="n">168.175<small> 萬</small></div><div class="l">押標金（約 5%）<br>有效期：開標日起 80 日</div></div>
+    <div class="cell"><div class="n">8<small> 年</small></div><div class="l">保固 / 免費維運<br>自驗收合格日起算</div></div>
+    <div class="cell"><div class="n">75<small> 分</small></div><div class="l">評選合格門檻<br>平均總評分（未達不列協商）</div></div>
+    <div class="cell"><div class="n">12<small> 份</small></div><div class="l">服務建議書<br>A4 · 中文 · ≤100 頁</div></div>
+    <div class="cell"><div class="n">20/40/40</div><div class="l">分期付款比例<br>簽約 / 里程碑 / 驗收尾款</div></div>
+    <div class="cell alt"><div class="n">非中國</div><div class="l">通訊/資通訊設備<br>不得中國生產或品牌</div></div>
+  </div>
+  <div class="callout">
+    <b>一句話結論：</b>這是一個「政策型、中央特別預算、期程極緊」的統合式微電網統包案。技術門檻中等，但
+    <strong>工期風險最高</strong>——決標到 11/30 完工可能僅 2～4 個月，且需完成技師簽證、消防審查、台電併網變更。
+    能否如期交付、並釐清招標文件中數處規格與金額不一致，是投標與履約的核心。
+  </div>
+</section>
+
+<!-- 1. 投標視角 -->
+<section id="angle">
+  <div class="sec-head"><span class="sec-num">01</span><h2>從投標者角度：機會大、但被期程與責任「兩頭夾」</h2></div>
+  <p class="sec-sub">此案對具備儲能系統整合、電力工程與再生能源實績的能源技術服務業者是明確機會，但契約把設計、統包、8 年維運與災防責任全數壓在得標廠商身上。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3><span class="dot t"></span>對我方有利之處（機會）</h3>
+      <ul class="clean">
+        <li><b>不訂底價、最有利標</b>：以技術與服務品質競爭，而非殺價；有整合實績者容易拉開分數。</li>
+        <li><b>資格門檻不高</b>：具「能源技術服務業(IG03010)」或「甲級電器承裝業(E601010)」即可投標。</li>
+        <li><b>中央特別預算、款項確定</b>：經濟部能源署編列 115–116 特別預算，付款來源明確。</li>
+        <li><b>兩場域一次拿下</b>：規模經濟，設備採購與團隊調度可攤提。</li>
+        <li><b>非中國設備限制</b>：對已布局非陸系供應鏈的廠商是差異化門檻，阻卻部分競爭者。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="dot c"></span>對我方不利之處（挑戰）</h3>
+      <ul class="clean c">
+        <li><b>完工期程極緊</b>：硬性死線 115/11/30，且含設計簽證、消防審查、台電併網。</li>
+        <li><b>統包全責</b>：細部設計、結構/電機/消防技師簽證費全數內含，不另計價。</li>
+        <li><b>8 年維運綁定</b>：24 小時窗口、36/72 小時到場完修、每年防災演練與在地培力。</li>
+        <li><b>高額保險與保證</b>：電池意外險 1,000 萬、失竊險 500 萬、工程綜合險 ≥ 契約 110%。</li>
+        <li><b>既有系統協調</b>：需與既設躉購太陽光電、既設發電機之原廠商協調整合測試。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="dot a"></span>投標評分怎麼配？——服務建議書完整性是決勝點（佔 40%）</h3>
+    <div class="twrap" style="box-shadow:none;border:none">
+      <table>
+        <thead><tr><th>評選項目</th><th>配分</th><th>投標策略重點</th></tr></thead>
+        <tbody>
+          <tr><td class="spec">服務建議書之完整性、可行性及瞭解程度</td><td class="hl-a">40</td><td class="mut">逐項對應規範、附「規範符合對照表」、螢光標示；決勝關鍵</td></tr>
+          <tr><td class="spec">廠商報價合理性及完整性</td><td class="hl-b">20</td><td class="mut">成本分析佐證，避免總價偏低（&lt;80% 底價須補差額保證金）</td></tr>
+          <tr><td class="spec">廠商經驗信譽、主持人及人力</td><td>15</td><td class="mut">近 3 年儲能/微電網/電力整合實績、團隊證照</td></tr>
+          <tr><td class="spec">如期履約能力、工作計畫、進度、資源</td><td>15</td><td class="mut">甘特圖每月至少一里程碑；證明趕得上 11/30</td></tr>
+          <tr><td class="spec">簡報與答詢</td><td>10</td><td class="mut">每家簡報 10 分＋答詢 10 分；不得更改投標內容</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:13.5px;margin-top:10px">決標方式：序位法，平均總評分需達 <b>75 分</b>；由評定序位第一較多者決標。全部廠商未達 75 分則從缺廢標。</p>
+  </div>
+</section>
+
+<!-- 2. 需求重點 -->
+<section id="need">
+  <div class="sec-head"><span class="sec-num">02</span><h2>需求重點摘要：兩場域、五大系統、災時自主供電 72 小時</h2></div>
+  <p class="sec-sub">交付結合太陽光電(PV)、電池儲能(ESS/PCS)、可遙控柴油發電機(DG)、能源管理系統(EMS)與通訊模組之防災微電網，平時自發自用/配合台電調度，災時自主供電至少 72 小時。</p>
+
+  <h3 style="font-size:16px;margin:6px 0 12px;display:flex;align-items:center;gap:9px"><span class="dot t"></span>兩場域裝置容量對照</h3>
+  <div class="twrap">
+    <table>
+      <thead><tr><th>項目</th><th>滿州國中教學大樓</th><th>三地門體育館暨多功能活動中心</th></tr></thead>
+      <tbody>
+        <tr><td class="spec">案號</td><td>Danas-F-02-04-16</td><td>Danas-F-02-04-17</td></tr>
+        <tr><td class="spec">地址</td><td class="mut">屏東縣滿州鄉文化路 32 號</td><td class="mut">屏東縣三地門鄉三地村行政街 11 號</td></tr>
+        <tr><td class="spec">預算上限</td><td class="hl-b">1,729.8 萬</td><td class="hl-b">1,633.7 萬</td></tr>
+        <tr><td class="spec">太陽光電 PV</td><td>165.34 kWp 以上</td><td>121.66 kWp 以上</td></tr>
+        <tr><td class="spec">儲能 ESS</td><td>50 kW / 100 kWh 以上</td><td class="hl-a">250 kW / 500 kWh 以上</td></tr>
+        <tr><td class="spec">柴油發電機 DG</td><td>80 kW 以上</td><td>20 kW 以上</td></tr>
+        <tr><td class="spec">EMS</td><td>1 式</td><td>1 式</td></tr>
+        <tr><td class="spec">熱泵</td><td class="mut">—</td><td>製熱 43 kW / 製冷 38 kW（2 台）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid2" style="margin-top:18px">
+    <div class="card">
+      <h3><span class="dot t"></span>系統運轉邏輯</h3>
+      <ul class="clean">
+        <li><b>併聯模式</b>（市電有電）：台電 + PV 供電，餘電對 ESS 充電；EMS 平滑 PV 輸出。</li>
+        <li><b>自主模式</b>（市電停電）：PV → ESS → DG 依序匹配；ESS 低於設定值啟動 DG 充電。</li>
+        <li><b>EMS 自動排程</b>：離峰(24:00–06:00)充電、夜尖峰(18:00–20:00)放電，配合電網調度。</li>
+        <li><b>災時韌性</b>：自主供電至少 <b>72 小時</b>維生負載。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="dot c"></span>關鍵設備規格要點</h3>
+      <ul class="clean c">
+        <li><b>ESS</b>：鋰電池＋BMS，單顆自動均衡、多重防護與防延燒、IP54 金屬箱、內建 UPS 可獨立運轉 ≥ 30 分。</li>
+        <li><b>EMS</b>：監控 ATS/CB/PCS/ESS/DG 與既設 PV；支援 Modbus/DNP3/IEC61850/TCP-IP；防風雨金屬外箱。</li>
+        <li><b>DG</b>：同步併聯控制器、可遠端遙控、防噪音箱、連續運轉 ≥ 25 小時、觸媒淨化。</li>
+        <li><b>遠端監控</b>：3 套（2 案場＋主機規格 i5/32GB×2/1TB SSD）＋可攜式測試器 3 只。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="dot a"></span>服務、訓練與保固要求</h3>
+    <div class="grid2">
+      <ul class="clean a">
+        <li><b>保固 8 年</b>免費維運；每季（1/4/7/10 月）會同定檢。</li>
+        <li><b>24 小時</b>服務窗口；故障 36 小時到場、72 小時完修。</li>
+        <li>每年至少 1 場<b>防災演練＋在地培力訓練</b>。</li>
+      </ul>
+      <ul class="clean a">
+        <li>驗收前及每年辦理<b>教育訓練與技術移轉</b>。</li>
+        <li>竣工圖 4 份（A3 以上＋AutoCAD/PDF 光碟）。</li>
+        <li>設備須 <b>114 年後新品</b>、附出廠證明、合法版權。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 時程 -->
+<section id="time">
+  <div class="sec-head"><span class="sec-num">03</span><h2>投標與履約時程：決標到完工是最窄的瓶頸</h2></div>
+  <p class="sec-sub">中央特別預算期程剛性。代辦協議書明訂承包廠商須於 115/11/30 前完成建置，並於 1 個月內完成驗收點交。</p>
+  <div class="grid2">
+    <div class="card">
+      <h3><span class="dot t"></span>投標階段</h3>
+      <div class="tl">
+        <div class="ev"><div class="d">等標期 ¼ 前</div><div class="t">書面<b>請求釋疑</b>（本報告注意事項宜於此時提出）</div></div>
+        <div class="ev"><div class="d">截止投標前</div><div class="t">繳納<b>押標金 168.175 萬</b>、備妥資格/規格/價格文件</div></div>
+        <div class="ev key"><div class="d">開標 → +50 日</div><div class="t">投標文件有效期；<b>評選簡報＋答詢</b></div></div>
+        <div class="ev"><div class="d">決標日起 7 日內</div><div class="t">完成<b>簽約</b>；繳履約保證金（契約 10%）</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3><span class="dot c"></span>履約階段</h3>
+      <div class="tl">
+        <div class="ev"><div class="d">簽約日 +14 日</div><div class="t">工作執行/設計實施計畫書</div></div>
+        <div class="ev"><div class="d">簽約日 +45 日</div><div class="t">細部設計圖說</div></div>
+        <div class="ev"><div class="d">開工前</div><div class="t">施工/品質/安衛計畫書、<b>火災風險評估報告＋消防設計圖說</b></div></div>
+        <div class="ev key"><div class="d">115/11/30</div><div class="t"><b>完成建置</b>（硬性死線）</div></div>
+        <div class="ev key"><div class="d">+1 個月內</div><div class="t"><b>完成驗收與點交</b></div></div>
+        <div class="ev"><div class="d">驗收合格 +8 年</div><div class="t">維運保固；運轉滿 1 年後辦理國有動產受贈</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="callout"><b>現金流提醒：</b>付款採 20%(簽約) / 40%(累計動支達契約 50% 里程碑，須設備到貨等佐證) / 40%(驗收點交尾款)。設備款需先行墊付，資金調度須納入報價與規劃。</div>
+</section>
+
+<!-- 4. 注意事項 -->
+<section id="watch">
+  <div class="sec-head"><span class="sec-num">04</span><h2>特別注意事項：先釐清「文件互相打架」，再談趕工</h2></div>
+  <p class="sec-sub">下列為足以影響得標資格、報價或履約風險之要點，依嚴重度排序。建議標示 ★ 者於等標期內以書面請求釋疑。</p>
+
+  <div class="risk">
+    <div class="rh"><span class="lvl">★ 高｜須釋疑</span><h3>保固保證金金額三份文件不一致</h3></div>
+    <p>投標須知勾選「契約金額 <b>10%</b>」；採購需求說明書寫「<b>250 萬定額</b>」；代辦協議書與計畫書範本則為「<b>3% 為原則</b>」。以總價 3,363.5 萬估算，三者差距達 100～336 萬，直接影響資金成本，<b>務必書面釋疑確認</b>。</p>
+  </div>
+
+  <div class="risk">
+    <div class="rh"><span class="lvl">★ 高</span><h3>完工死線 115/11/30 為剛性期程</h3></div>
+    <p>源自中央特別預算與代辦協議書，展延須經能源署同意。決標若落在 115 年下半年，實際工期可能僅 2～4 個月，卻要涵蓋<b>細部設計、技師簽證、消防審查、設備到貨、台電併網變更、整合測試</b>。逾期違約金與趕工成本須先評估。</p>
+  </div>
+
+  <div class="risk">
+    <div class="rh"><span class="lvl">★ 高</span><h3>非中國大陸設備限制範圍廣且嚴</h3></div>
+    <p>EMS、PCS、智慧變流器、可遙控 DG 及一切具通訊功能之資通訊產品，<b>均不得為中國大陸生產或中國品牌</b>。供應鏈須提前鎖定並備妥出廠證明；違反即屬不符規定。</p>
+  </div>
+
+  <div class="risk">
+    <div class="rh"><span class="lvl">★ 高</span><h3>儲能消防安全指引與技師簽證（費用內含）</h3></div>
+    <p>須依內政部消防署 114.11.3 修正「提升儲能系統消防安全管理指引」提出<b>火災風險評估報告與消防安全設備設計圖說</b>；並提供<b>電機技師、消防設備師</b>簽證。三地門 500 kWh 儲能規模較大，消防與空間配置尤須注意。簽證費已納入設備費，不另計價。</p>
+  </div>
+
+  <div class="risk mid">
+    <div class="rh"><span class="lvl">中</span><h3>需求說明書出現「佳里國中後港校區」範本殘留字樣</h3></div>
+    <p>DG 規格章節誤植台南「佳里國中後港校區」，本案實為滿州／三地門。屬明顯範本套用疏漏，<b>建議釋疑確認 DG 適用範圍與規格</b>，避免驗收爭議。</p>
+  </div>
+
+  <div class="risk mid">
+    <div class="rh"><span class="lvl">中</span><h3>三地門熱泵有數量、無詳細規格</h3></div>
+    <p>容量表列有熱泵（製熱 43 kW／製冷 38 kW×2 台），但規格章節未見對應詳規。報價與設計前<b>宜釐清熱泵功能界接與驗收基準</b>。</p>
+  </div>
+
+  <div class="risk mid">
+    <div class="rh"><span class="lvl">中</span><h3>高額保險責任</h3></div>
+    <p>電池組產品意外險 ≥ <b>1,000 萬</b>（履約期間）、重要產品失竊險 <b>500 萬</b>、工程綜合保險 ≥ 契約總價 <b>110%</b>（受益人隨產權在能源署／機關間變更）。保費須完整計入報價。</p>
+  </div>
+
+  <div class="risk mid">
+    <div class="rh"><span class="lvl">中</span><h3>既設躉購 PV 與既設發電機協調整合</h3></div>
+    <p>需協調既有太陽光電（躉購中）之災時電力轉用，並整合既設 2 台未可控發電機。<b>整合測試須配合原既設廠商</b>，介面與責任界線宜先確認。</p>
+  </div>
+
+  <div class="risk info">
+    <div class="rh"><span class="lvl">注意</span><h3>其他履約條款</h3></div>
+    <p>屋頂防水破壞須復原並保證保固期不漏水；台電併網內線圖審變更由乙方辦理；罰則每逾一日 5,000 元；不允許共同投標、不允許替代方案；日數以<b>工作天</b>計算；投標文件僅 1 式 1 份、須以書面（非電子）簽約。</p>
+  </div>
+</section>
+
+<!-- 5. 檢核表 -->
+<section id="check">
+  <div class="sec-head"><span class="sec-num">05</span><h2>投標文件檢核表</h2></div>
+  <p class="sec-sub">依投標須知與評選方案彙整，投標前逐項確認。</p>
+  <div class="card">
+    <div class="check">
+      <div class="it"><span class="bx"></span><div>公司登記 / 商業登記證明（含 IG03010 或 E601010 營業項目）</div></div>
+      <div class="it"><span class="bx"></span><div>納稅證明文件（最近一期營業稅）</div></div>
+      <div class="it"><span class="bx"></span><div>投標廠商聲明書（用印與標單一致）</div></div>
+      <div class="it"><span class="bx"></span><div>投標廠商切結書</div></div>
+      <div class="it"><span class="bx"></span><div>押標金 168.175 萬繳納憑證＋退還申請書</div></div>
+      <div class="it"><span class="bx"></span><div>標單及標價清單（中文大寫、不得鉛筆、不得塗改）</div></div>
+      <div class="it"><span class="bx"></span><div>服務建議書 12 份（A4、中文、≤100 頁，附件不計）</div></div>
+      <div class="it"><span class="bx"></span><div>建置計畫書（每一場域各 1 份，依範本格式）</div></div>
+      <div class="it"><span class="bx"></span><div>規範符合對照表（螢光標示、技術文件佐證）</div></div>
+      <div class="it"><span class="bx"></span><div>設備型錄與技術文件（EMS/ESS/DG，繁中或英文）</div></div>
+      <div class="it"><span class="bx"></span><div>電機技師 / 消防設備師簽證規劃</div></div>
+      <div class="it"><span class="bx"></span><div>近 3 年類似實績文件</div></div>
+      <div class="it"><span class="bx"></span><div>成本分析等報價佐證資料</div></div>
+      <div class="it"><span class="bx"></span><div>投標廠商文件審查表（一併寄回）</div></div>
+    </div>
+  </div>
+
+  <div class="disc">
+    <b>資料來源：</b>本報告依屏東縣政府本案招標文件整理，含投標須知(114.12.31版)、採購需求說明書(1150611)、評選方案(1140523修正)、投標須知補充說明(1130103)、財物採購契約(1141230)、代辦採購協議書、建置計畫書範本及滿州儲能規格等。
+    <br><b>免責聲明：</b>本頁為投標決策之內部參考整理，非招標機關正式文件；所有數字、規格與期限以屏東縣政府最新公告之招標文件及釋疑為準。標示不一致之處請於等標期內書面釋疑確認。
+    <br><b>聯絡窗口：</b>屏東縣政府城鄉發展處工商科 侯詠翔　電話 (08)7320415#3315。
+  </div>
+</section>
+</div>
+
+<footer><div class="wrap">
+  <span>屏東縣滿州國中 · 三地門｜小型防災微電網建置計畫 · 投標分析報告</span>
+  <span>進金生能源 · 內部投標決策參考</span>
+</div></footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('themebtn');
+  function cur(){var t=document.documentElement.getAttribute('data-theme');
+    if(t)return t;return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+  btn.addEventListener('click',function(){
+    var n=cur()==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);
+  });
+})();
+</script>
+</body>
+</html>
