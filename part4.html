@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="屏東防災微電網 13 項委員提問的文件事實、建議答覆、補充證據與出處。">
+  <title>Part 4｜委員提問與建議答覆</title>
+  <link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="index.html">屏東防災微電網</a><nav class="nav" aria-label="主要導覽"><a class="home" href="index.html">首頁</a><a href="part1.html">Part 1 標案</a><a href="part2.html">Part 2 提案</a><a href="part3.html">Part 3 審閱</a><a class="active" href="part4.html">Part 4 答詢</a></nav></header>
+  <main class="report">
+    <section class="hero">
+      <div class="eyebrow">Part 4 · committee Q&A</div>
+      <h1>委員提問與建議答覆</h1>
+      <p class="lead">13 題均保留原始提問，並區分「文件已載明」與「建議答覆」。尚未出現在標書、計畫書或簡報中的細節，明確列為應補圖說、計算或測試，不提前宣稱已完成。</p>
+      <div class="meta-row"><span class="meta">屋頂／光電：2 題</span><span class="meta">儲能／DG／消防：6 題</span><span class="meta">EMS／OpenADR：3 題</span><span class="meta">電網／接地／復電：2 題</span></div>
+    </section>
+    <nav class="local-toc" aria-label="頁內目錄"><a href="#summary">Executive Summary</a><a href="#pv">光電屋頂</a><a href="#equipment">設備安全</a><a href="#ems">EMS 整併</a><a href="#grid">電網控制</a><a href="#evidence">答詢附件</a></nav>
+
+    <section id="summary" class="report-section executive">
+      <div class="section-kicker">Executive Summary</div><h2>答詢要守住四條界線</h2>
+      <div class="summary-list">
+        <div class="summary-item"><b>先更正問題前提。</b>目前提案的儲能櫃並非設在屋頂；三地門規劃集中於既有配電設備旁，滿州規劃在建物西側。委員疑慮仍應以基礎、地耐力、消防間距與未來擴充計算回應。</div>
+        <div class="summary-item"><b>規格數字不能代替設計。</b>PV 5,400 Pa、PCS 45°C、ESS 容量加大或 DG 35 kW 都只是產品／容量條件，仍需防水、結構、散熱、噪音、排煙與消防圖說。</div>
+        <div class="summary-item"><b>災時控制必須地端優先。</b>遠端 Web 監控可以保留，但斷網時 ATS、PCS、BMS、DG 與關鍵負載仍須由場址 EMS／控制器安全運作；既有校園 EMS 的資料與控制權則需另行盤點。</div>
+        <div class="summary-item"><b>OpenADR 目前只是擴充建議。</b>文件明載 DNP3、IEC 61850、Modbus、TCP/IP、REST API，未明載 OpenADR 或授權台電調度；任何外部事件都應受業主 SOC 保留與防災優先規則限制。</div>
+      </div>
+      <div class="legend"><span>藍色：文件已載明</span><span>綠色：建議答覆／承諾</span><span>每題末段：來源與文件邊界</span></div>
+    </section>
+
+    <section id="pv" class="report-section">
+      <div class="section-kicker">01 · PV roof, waterproofing, fire & loading</div><h2>屋頂光電的三道防線：防水、消防與結構</h2>
+      <p class="section-lead">提案已有場址型式、模組機械載重與結構技師規劃，但漏水細部、防火區劃、走道及既有屋況修繕仍需在施工圖階段補齊。</p>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>防線</th><th>現有資料</th><th>必補設計／驗收</th><th>合格證據</th></tr></thead><tbody>
+        <tr><td><b>防水</b></td><td>滿州 RC 屋頂、三地門浪板屋頂；依圖施工。</td><td>既有裂縫／鏽蝕調查、穿孔／夾具、防水收邊、排水、完工後試水或雨後巡檢。</td><td>屋況紀錄、節點大樣、材料證明、施工照片與試水／巡檢報告。</td></tr>
+        <tr><td><b>消防</b></td><td>模組及系統依相關產品標準，標案要求防火設計。</td><td>維修／消防走道、DC 隔離、線槽、防延燒、緊急標示、消防搶救與斷電程序。</td><td>消防檢討、配置圖、標示、絕緣／保護測試及應變圖卡。</td></tr>
+        <tr><td><b>結構</b></td><td>TOPCon 雙玻模組、5,400 Pa 靜態機械載重測試，並規劃結構技師評估。</td><td>既有結構、支架、錨定、風壓、地震、積水、維修活載及局部集中載重計算。</td><td>結構計算書、技師簽證、拉拔／扭力紀錄及竣工配置。</td></tr>
+      </tbody></table></div>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q1</span><h3>屋頂或地面車棚設置，是否思考漏水？</h3></div>
+        <div class="question-body"><blockquote>針對太陽光電放置於屋頂，或者是放在地上做成車棚，是否有進行「漏水」的思考？畢竟屋頂年久失修。</blockquote>
+          <div class="answer-grid">
+            <div class="answer fact"><h4>文件已載明</h4><p>目前提案是屋頂型：三地門為浪板屋頂 22 kWp，滿州為 RC 屋頂 66 kWp；文件未提出地面車棚替代方案。模組採 TOPCon 雙玻，具 IEC 61215／61730 與 5,400 Pa 靜態機械載重測試，並規劃由結構技師評估。</p></div>
+            <div class="answer recommend"><h4>建議現場答覆</h4><p>承諾在施工圖前完成既有屋況與漏水調查。RC 屋頂優先採減少穿孔方案，必要錨定處依核定節點做止水、補強及試水；浪板屋頂應檢查鏽蝕、螺栓、搭接與排水，以專用夾具／防水墊片施工。若結構或防水不適合，才把地面車棚列為需經機關同意、重新做結構、排水、動線及預算評估的變更方案。</p></div>
+          </div><p class="source"><strong>出處：</strong>計畫書 5.2、5.3、6.2；簡報 p18、p25–26；標書之 PV、防水與結構簽證要求。漏水細部與車棚方案未明載，屬應補設計。</p>
+        </div>
+      </article>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q10</span><h3>漏水、火災與載重未在簡報詳述</h3></div>
+        <div class="question-body"><blockquote>太陽光電的建置最怕漏水、火災跟載重，但未在簡報中看到針對這三項內容的說明，請再詳述說明。</blockquote>
+          <div class="answer-grid">
+            <div class="answer fact"><h4>文件已載明</h4><p>計畫書列出 PV 配置、模組認證與機械載重，並提到依圖施工、結構技師簽證、防水防火及接地；簡報呈現場址與 PV 概念，但未把三項風險整理成完整設計與驗收鏈。</p></div>
+            <div class="answer recommend"><h4>建議現場答覆</h4><p>以「現況調查 → 技師計算／防水節點／消防配置 → 施工停留點 → 完工試驗 → 災後巡檢」六步回答。漏水提出節點大樣與試水；火災提出 DC 隔離、線槽、走道、標示與消防搶救程序；載重提出風壓、地震、既有結構、支架與錨定計算。答詢後補一張三項風險對照圖放入下一版簡報。</p></div>
+          </div><p class="source"><strong>出處：</strong>計畫書 5.2、5.3、6.2、7.2；簡報 p18、p25–26；標書之 PV、消防、防水與結構要求。</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="equipment" class="report-section">
+      <div class="section-kicker">02 · ESS, DG, high-voltage DC & fire</div><h2>先釐清設備位置，再回答載重、擴充、散熱與消防</h2>
+      <p class="section-lead">目前提案的儲能櫃是地面／建物旁配置，不是屋頂配置。答詢應把委員擔心的「載重」轉為地耐力、基礎、吊裝、消防間距及未來擴充的總體配置。</p>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q2</span><h3>儲能設備是否放在屋頂？載重是否評估？</h3></div>
+        <div class="question-body"><blockquote>儲能設備放在屋頂，是否有考慮載重的問題？</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明</h4><p>提案並未把 ESS 放在屋頂。三地門 3 套 120 kW／240 kWh 儲能櫃規劃集中在既有配電設備旁；滿州 1 套 120 kW／240 kWh 儲能櫃規劃於建物西側。屋頂配置的是 PV。</p></div><div class="answer recommend"><h4>建議現場答覆</h4><p>先更正位置，再說明仍會由結構技師依設備實重、基礎反力、地耐力、沉陷、地震、風載、吊裝與維修動線計算；依結構圖施作 3000 psi 混凝土基礎，完工後保留材料、強度、水平度、錨栓與定位紀錄。</p></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 5.2、5.3、6.3、6.4；簡報 p25–26。ESS 屋頂設置不是目前提案內容。</p>
+        </div>
+      </article>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q3</span><h3>容量升級後是否保留擴充空間與承載能力？</h3></div>
+        <div class="question-body"><blockquote>廠商針對設備提供更高規格的功率以及能量，是否有考慮擴充的空間以及載重，避免造成危安的問題？</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明</h4><p>三地門配置 3 套 120 kW／240 kWh，合計 360 kW／720 kWh；滿州配置 1 套 120 kW／240 kWh。計畫書有設備配置、消防與基礎概念，但未明確承諾未來再擴充的預留容量、空間與基礎載重。</p></div><div class="answer recommend"><h4>建議現場答覆</h4><p>現有容量先以核定設備為設計基準，未經機關同意不得自行增櫃。若要預留擴充，須同步檢核變壓器／盤體／母線／保護／電纜、通訊點數、短路容量、散熱、消防距離、救災動線、地耐力與基礎反力。提交「現況／本期／最大可擴充」三階段配置圖與載重表。</p></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 2.1–2.3、5.2、5.3、6.2、7.2；簡報 p13–14、p25–26。未來擴充數量及預留條件未明載。</p>
+        </div>
+      </article>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q4</span><h3>35 kW 發電機的噪音與排煙如何處理？</h3></div>
+        <div class="question-body"><blockquote>廠商針對發電機的機組從 25 kW 升級到 35 kW 更大功率，是否有考慮噪音以及排煙管路的設置？如果沒有，將造成學生噪音困擾。</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明與前提校正</h4><p>提案三地門機組為 HM-35、35 kW，具同步併聯、遠端啟動、防溢堤油箱及防音箱；標書另要求排氣導向室外並兼顧觸媒／環境。文件中的「25」主要是連續運轉至少 25 小時要求，不是可確認的 25 kW 原規格；標案三地門最低功率是 20 kW。</p></div><div class="answer recommend"><h4>建議現場答覆</h4><p>承諾在施工圖補上消音箱規格、進排風消音、減振基座、排煙高度／方向／隔熱／冷凝排放及與教室、門窗、進氣口的距離。於最不利校園位置量測背景與滿載噪音，設定合約 dB 判定值；排煙與觸媒依環境及消防要求審查，試車須含滿載、噪音與排煙檢查。</p></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 2.1、2.5、5.2；簡報 p13、p19、p36；標書 5.3 DG 要求。精確排煙路徑與 dB 值未明載，應補圖說與量測標準。</p>
+        </div>
+      </article>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q5</span><h3>768 Vdc 是否符合配電與人員安全標準？</h3></div>
+        <div class="question-body"><blockquote>計畫書第六頁，儲能設備串聯成 768 V 的高壓，廠商設置時是否有考慮高壓的危險？是否有符合配電標準？</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明</h4><p>電池系統標稱 768 Vdc，操作範圍約 600–876 Vdc；BMS 具高壓繼電器、絕緣、溫度、過流等監控，系統配置 AC／DC 斷路器、SPD、接地及保護。計畫書亦要求高低壓電纜依圖施工，接地依台電併聯審查與屋內線路裝置規則辦理。</p></div><div class="answer recommend"><h4>建議現場答覆</h4><p>768 Vdc 具有嚴重電弧與觸電風險，不能只以設備型錄回答。應由電機技師確認法規分類及設計，完成 DC 隔離、聯鎖、預充／放電、殘壓確認、絕緣監測、短路／電弧防護、標示、上鎖掛牌、PPE、緊急停機與原廠人員施工程序；驗收做絕緣、接地、保護、EPO、開門聯鎖與殘壓測試。</p></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 2.3、2.4、6.4、7.2；簡報 p14、p17；標書 ESS 與配電要求。最終法規分類、保護設定與施工 SOP 應由電機技師及原廠核定。</p>
+        </div>
+      </article>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q6</span><h3>容量升級後，45°C 條件與散熱空間是否足夠？</h3></div>
+        <div class="question-body"><blockquote>電池設備的規格在標書要求 0–40°C，在計畫書的規格中，此設備可以容納到 45°C。但由於給的功率以及能量升級，散熱空間是否足夠？</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明與前提校正</h4><p>計畫書的 120 kW @45°C 是 PCS 輸出條件，不能直接當成電池可在 45°C 滿功率運轉的證明。電池採液冷，提案主張 PACK 內電芯溫差控制在 2°C 以內；BMS 具溫度、漏水與降載／停機保護。標書環境條件仍須依 0–40°C 要求逐項符合。</p></div><div class="answer recommend"><h4>建議現場答覆</h4><p>容量升級後應做最不利夏季的熱負載分析：環境溫度、日照、櫃體間距、同時充放電、PCS／電池損耗、冷卻能力、風道短路及降額曲線。提交液冷容量、散熱間距、維修空間、溫度感測點、告警／降載／停機值；SAT 以高負載連續運轉紀錄進出水溫、電芯最大／最小溫差與 PCS 降額情形。</p></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 2.3、2.4、表 2-5、表 2-8；簡報 p14、p17；標書 ESS 環境條件。完整熱負載計算與高溫 SAT 條件未明載。</p>
+        </div>
+      </article>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q11</span><h3>儲能櫃防火牆設計在哪裡？</h3></div>
+        <div class="question-body"><blockquote>針對儲能櫃，簡報跟計畫書中說要做防火牆，但在簡報中沒有看到，請說明。</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明</h4><p>計畫書寫明三地門 ESS 集中設於既有配電設備旁，並規劃由消防技師設計防火牆；簡報 p25 亦以文字提到儲能與建物間依指引設置防火牆，但沒有呈現牆體位置、尺寸、材料、耐火時效與剖面。</p></div><div class="answer recommend"><h4>建議現場答覆</h4><p>承認簡報圖面呈現不足，補交消防技師核定的總平面與剖面：標示 ESS、建物、DG、圍牆、門窗／進氣口、維修走道、消防救災動線、防火牆高度／長度／厚度／材料／耐火時效，以及告警、EPO、滅火與通報聯動。不得用示意牆取代消防設計及風險評估。</p></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 5.2、9.5；簡報 p25、p30；標書消防安全與專業簽證要求。防火牆細部圖尚未在簡報呈現。</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="ems" class="report-section">
+      <div class="section-kicker">03 · Local/cloud EMS, existing EMS & OpenADR</div><h2>控制主體應在地端，遠端平台負責監看與授權調度</h2>
+      <p class="section-lead">文件支援 Web 與多協定，但沒有說明既有「班班有冷氣」EMS 的品牌、點表、API 或控制權。最穩健的落地方式是先做資料整併，再依書面權限逐步開放控制。</p>
+      <div class="layer-stack" aria-label="EMS 控制優先級">
+        <div class="layer"><strong>優先 1｜設備安全</strong><span>BMS、PCS、保護繼電器與 EPO 的安全限制，不得被外部排程覆寫。</span></div>
+        <div class="layer"><strong>優先 2｜防災供電</strong><span>地端 EMS 保留關鍵負載與最低 SOC；停電或斷網時持續自主控制。</span></div>
+        <div class="layer"><strong>優先 3｜業主策略</strong><span>平時電價排程、PV 自用、需量與校園能源管理，由業主設定權限。</span></div>
+        <div class="layer"><strong>優先 4｜外部事件</strong><span>OpenADR／需求反應僅在業主授權、SOC 餘裕與防災條件滿足時接受。</span></div>
+      </div>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q7</span><h3>本案 EMS 是地端還是雲端？災時以誰為主？</h3></div>
+        <div class="question-body"><blockquote>由於之前政策有「班班有冷氣」，各個學校都有設置 EMS。此標案的 EMS 請問是地端還是雲端？未來如果有災害的時候，請問以哪一個 EMS 為主？</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明</h4><p>提案採 Web-based EMS，支援多網路與 DNP3／IEC 61850 等協定；各場址配置地端閘道／控制器，現場資料先在地端彙整，再提供遠端監控。文件未明確定義遠端主機是否屬公有雲、私有雲或中央機房，也未提供既有校園 EMS 介面資料。</p></div><div class="answer recommend"><h4>建議現場答覆</h4><p>災害與斷網時以本案「場址地端防災 EMS」為控制主體，直接管理 ATS、PCS、BMS、DG、PV 與關鍵負載；遠端平台只做監看、報表與經授權設定。既有班班有冷氣 EMS 在完成介面與控制權盤點前，先作資料來源，不直接覆寫防災控制。</p></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 2.2、5.4、6.6；簡報 p20–22、p27；標書 EMS 要求。既有校園 EMS 與遠端部署型態未明載。</p>
+        </div>
+      </article>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q12</span><h3>防災 EMS 如何與既有「班班有冷氣」EMS 整併？</h3></div>
+        <div class="question-body"><blockquote>「班班有冷氣」已經有既有的 EMS，針對防災微電網的 EMS，未來可以如何整併？請提供說明。</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明</h4><p>本案 EMS 支援 Modbus、DNP3、IEC 61850、TCP/IP 與 RESTful API，具備對接能力；但招標與提案未列既有校園 EMS 的廠牌、協定、API、網路區段、點表、資料品質、控制功能及維護責任。</p></div><div class="answer recommend"><h4>建議落地方案</h4><ul><li>第一階段：盤點既有 EMS 的電表、空調、需量、協定、點表與帳號權限。</li><li>第二階段：先以 API／閘道做唯讀資料整併，統一時間、設備代碼、單位與告警。</li><li>第三階段：建立控制權矩陣；平時可交換需量／排程，災時由防災 EMS 鎖定關鍵負載。</li><li>第四階段：做斷網、資料異常、重複命令、權限越界及回復測試，留下稽核紀錄。</li></ul></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 2.2、5.4、6.4；簡報 p20–22。既有 EMS 的實際介面未明載，整併流程為建議方案。</p>
+        </div>
+      </article>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q13</span><h3>未來 OpenADR 調度時，如何確保業主用電優先？</h3></div>
+        <div class="question-body"><blockquote>未來臺電如果開放 OpenADR，目前的系統架構設計是否可以先把電量留給業主使用，而非被臺電進行調度？這一部分如何落實？請詳細說明。</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件界線</h4><p>提案明列 DNP3、IEC 61850、Modbus、TCP/IP 與 RESTful API，未明列 OpenADR，也沒有把本案承諾為台電需求反應或輔助服務資源。因此只能說架構具介接基礎，不能宣稱已支援 OpenADR 或已授權台電調度。</p></div><div class="answer recommend"><h4>建議落實機制</h4><p>在地端 EMS 預留 OpenADR 閘道，但外部事件先進入「政策閘門」：業主書面授權 → 防災模式關閉 → 關鍵負載預測完成 → SOC 高於業主保留值 → PV／用電仍有餘裕 → 才允許有限度調度。災害警戒、停電、通訊失聯、SOC 低或設備告警時自動拒絕／退出事件。</p><p style="margin-top:8px">應交付控制權限矩陣、SOC 保留規則、事件簽核／撤銷、失聯回退、外部指令防越權、資安及測試案例；最終決策權在業主與地端 EMS。</p></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 2.2、5.4；簡報 p20–22；標書之 72 小時與 EMS 調度要求。OpenADR 實作細節未明載，屬未來建議方案。</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="grid" class="report-section">
+      <div class="section-kicker">04 · Grid contribution, grounding & resynchronization</div><h2>區域電網經驗的價值，在於安全切換與驗證能力</h2>
+      <p class="section-lead">台電案場經驗可以證明團隊熟悉併網、孤島及黑啟動，但本案首要目標仍是避難供電；未簽署外部服務契約前，不應把本案說成必然替台電調度。</p>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q8</span><h3>台電區域電網案件有何幫助？接地系統如何施作？</h3></div>
+        <div class="question-body"><blockquote>廠商做過台電區域電網的案件，請說明這些標案對台電是否真的有幫助？此外，請說明整個接地系統需要怎麼施作？</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明</h4><p>提案引用南化、笨港區域電網實績，主張整合 ESS、DG、EMS、饋線 PV／負載，執行併聯、獨立孤島與全黑啟動，以提升饋線穩定與可靠度。本案接地依台電併聯審查與屋內線路裝置規則，確認接地電阻，並由原廠合格人員處理相關接頭與設備。</p></div><div class="answer recommend"><h4>建議現場答覆</h4><p>對台電的幫助在於驗證分散資源能安全併離網、支援故障隔離、再生能源整合與關鍵負載韌性；實際效益仍應以台電驗收／運轉資料與本案契約範圍說明。接地則依最終單線圖整合 ESS、PCS、DG、PV 支架、盤體、SPD／避雷、保護導體與等電位；做土壤／接地設計、接地電阻、導通、絕緣、接觸／步進電位及保護動作測試，並保留竣工接地圖。</p></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 6.4、10.2；簡報 p7–8、p24；標書之併網、接地與安裝要求。實績效益應以可佐證的業主／驗收資料為準。</p>
+        </div>
+      </article>
+
+      <article class="question-card">
+        <div class="question-title"><span class="q-no">Q9</span><h3>外部電力恢復時，EMS 如何同步回到併網？</h3></div>
+        <div class="question-body"><blockquote>針對防災的微電網，當外部的電力重新供給的時候，系統的同步 EMS 怎麼做？</blockquote>
+          <div class="answer-grid"><div class="answer fact"><h4>文件已載明</h4><p>計畫書說明市電恢復後由 EMS 與 ATS 自動切回市電併聯；DG 具同步併聯控制器，PCS 支援併網／孤島模式。現有敘述方向正確，但同步允差、延遲、重試與失敗回退值未完整展開。</p></div><div class="answer recommend"><h4>建議現場答覆</h4><p>把復電寫成狀態機：EMS 確認市電電壓／頻率／相序與穩定時間 → ATS／CB 維持隔離 → PCS／DG 依核定方式調整或卸載 → 同步檢查合格才閉合／轉供 → 漸進轉移負載 → PV／ESS 轉併網模式 → 驗證無逆送、無異常突波與保護正確。任一條件不合格則保持孤島並告警，不可強制閉合。</p></div></div>
+          <div class="flow" style="margin-top:16px" aria-label="復電同步流程"><div class="flow-node"><b>市電恢復</b><small>偵測但不立即閉合</small></div><div class="flow-node"><b>品質確認</b><small>電壓、頻率、相序、穩定時間</small></div><div class="flow-node"><b>同步／轉供</b><small>PCS、DG、ATS／CB 聯鎖</small></div><div class="flow-node"><b>漸進併網</b><small>負載轉移、PV／ESS 模式切換</small></div><div class="flow-node"><b>監測復歸</b><small>無逆送、突波、告警與事件紀錄</small></div></div>
+          <p class="source"><strong>出處：</strong>計畫書 2.2、2.5、表 11、6.6；簡報 p24、p27；標書之系統運轉邏輯。同步設定值與 SAT 判定應於設計審查核定。</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="evidence" class="report-section">
+      <div class="section-kicker">05 · Evidence package</div><h2>答詢後要用十份附件把承諾落地</h2>
+      <p class="section-lead">最有說服力的答覆不是再增加形容詞，而是交付可供技師、業主與驗收人員共同查核的文件。以下附件可同時回應 13 題。</p>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>附件</th><th>主要內容</th><th>對應問題</th><th>責任簽核</th></tr></thead><tbody>
+        <tr><td>1. 場址總配置與設備重量表</td><td>PV、ESS、DG、盤體、間距、維修／消防動線、實重與基礎反力。</td><td>Q1、Q2、Q3、Q10、Q11</td><td>專案經理＋結構／消防技師</td></tr>
+        <tr><td>2. 屋頂結構與防水節點</td><td>既有屋況、風／震／活載、錨定、穿孔／夾具、排水、試水。</td><td>Q1、Q10</td><td>結構技師＋施工單位</td></tr>
+        <tr><td>3. DG 噪音與排煙圖</td><td>防音箱、減振、dB 目標、排煙路徑、隔熱、觸媒與滿載測試。</td><td>Q4</td><td>機電／環安專業人員</td></tr>
+        <tr><td>4. 768 Vdc 安全與保護協調</td><td>單線圖、DC 隔離、聯鎖、殘壓、絕緣、PPE、LOTO、EPO。</td><td>Q5</td><td>電機技師＋原廠</td></tr>
+        <tr><td>5. 儲能熱負載與降額計算</td><td>夏季最不利條件、液冷能力、櫃距、告警／降載／停機及 SAT。</td><td>Q6</td><td>設備原廠＋電機技師</td></tr>
+        <tr><td>6. 防火牆與消防聯動圖</td><td>牆體位置／尺寸／耐火、告警、滅火、EPO、通報與救災動線。</td><td>Q10、Q11</td><td>消防技師</td></tr>
+        <tr><td>7. EMS 主從與權限矩陣</td><td>地端／遠端、設備安全、防災、業主與外部調度的優先級。</td><td>Q7、Q12、Q13</td><td>EMS 團隊＋業主</td></tr>
+        <tr><td>8. 既有 EMS 介面盤點</td><td>品牌、協定、點表、API、網路、控制權、資料品質與維護責任。</td><td>Q7、Q12</td><td>EMS 團隊＋校方／原維護商</td></tr>
+        <tr><td>9. 接地與等電位竣工圖</td><td>接地網、設備／支架／SPD、測試點、接地電阻與保護測試。</td><td>Q8</td><td>電機技師</td></tr>
+        <tr><td>10. 孤島／復電／OpenADR 測試矩陣</td><td>狀態、觸發、允差、重試、回退、SOC 保留、外部事件退出及紀錄。</td><td>Q9、Q13</td><td>整合測試負責人＋業主</td></tr>
+      </tbody></table></div>
+      <div class="success"><b>答詢總原則：</b>每一題都回到「圖說、計算、控制權限、測試紀錄、專業簽證」五種證據。已載明的規格可以直接說明；尚未載明的細節，應明確承諾在施工圖／設計審查前補齊，而不是提前宣稱已完成。</div>
+      <p class="source"><strong>本頁來源：</strong>採購需求說明書、建置計畫書範本、計畫書 V14、投標簡報 p1–38，以及委員 13 項提問。建議答覆不取代機關書面釋疑、技師簽證、台電審查或消防審查。</p>
+    </section>
+  </main>
+  <button class="top-button" data-top aria-label="回到頁首">↑</button><script src="assets/report.js"></script>
+</body>
+</html>

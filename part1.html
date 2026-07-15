@@ -1,10 +1,169 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Part 1｜標案需求</title><link rel="stylesheet" href="assets/deck.css"></head><body>
-<header class="topbar"><a class="brand" href="index.html">屏東防災微電網</a><nav class="nav" aria-label="簡報章節"><a class="home" href="index.html">首頁</a><a class="active" href="part1.html">Part 1 標案</a><a href="part2.html">Part 2 提案</a><a href="part3.html">Part 3 審閱</a></nav></header><main class="deck">
-<section class="slide dark"><div class="eyebrow">Part 1 · tender briefing</div><h1>標案需求與<br>投標決策框架</h1><p class="lead">Danas-F-02-04-16／17 以兩個避難場域為一案、一次投標。提案的核心不是堆疊容量，而是交付一套可驗收、可孤島、可維運八年的防災微電網。</p><div class="grid3"><div class="tile"><div class="metric">33.635M</div><p>公告總預算上限</p></div><div class="tile"><div class="metric">75 / 100</div><p>評選平均門檻</p></div><div class="tile"><div class="metric">8 年</div><p>免費保固與維運</p></div></div></section>
-<section class="slide"><div class="eyebrow">01 · project at a glance</div><h2>兩場址、同一履約責任</h2><table class="risk-table"><thead><tr><th>場址</th><th>最低設備基線</th><th>避難功能／施工介面</th></tr></thead><tbody><tr><td><b>滿州國中教學大樓</b><br>Danas-F-02-04-16</td><td>PV ≥65.34 kWp<br>ESS 50 kW／100 kWh<br>DG ≥80 kW</td><td>文化路 32 號；整合既有 PV 與既有不可控 DG，屋頂、電氣室與配電介面均須現勘。</td></tr><tr><td><b>三地門體育館暨多功能活動中心</b><br>Danas-F-02-04-17</td><td>PV ≥21.66 kWp<br>ESS 250 kW／500 kWh<br>DG ≥20 kW</td><td>行政街 11 號；偏遠避難公共設施，施工物流、消防安全與關鍵負載連續供電是關鍵。</td></tr></tbody></table></section>
-<section class="slide"><div class="eyebrow">02 · evaluation</div><h2>評選的得分重心</h2><div class="grid2"><div><div class="barrow"><span>理解／可行性</span><div class="bar"><i style="width:100%"></i></div><b>40</b></div><div class="barrow"><span>報價合理性</span><div class="bar"><i style="width:50%"></i></div><b>20</b></div><div class="barrow"><span>團隊與業績</span><div class="bar"><i style="width:37.5%"></i></div><b>15</b></div><div class="barrow"><span>進度與資源</span><div class="bar"><i style="width:37.5%"></i></div><b>15</b></div><div class="barrow"><span>簡報問答</span><div class="bar"><i style="width:25%"></i></div><b>10</b></div></div><div class="tile"><h3>投標文件硬條件</h3><ul class="list"><li>服務建議書 12 份，中文、正文 100 頁內（附件不計）。</li><li>簡報 10 分鐘、問答 10 分鐘；不能補充或改變投標內容。</li><li>需附近 3 年類似實績、逐項建置計畫書範本、標單與成本分析。</li><li>一次投標、不得聯合投標或替代方案。</li></ul></div></div></section>
-<section class="slide"><div class="eyebrow">03 · operating design</div><h2>必須驗證的孤島運轉邏輯</h2><div class="diagram"><svg viewBox="0 0 1000 260" role="img" aria-label="防災微電網控制架構"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#a5dfff"/></marker></defs><g fill="#173f72" stroke="#a5dfff" stroke-width="2"><rect x="30" y="70" width="150" height="55" rx="9"/><rect x="225" y="70" width="150" height="55" rx="9"/><rect x="420" y="48" width="160" height="99" rx="9" fill="#0c7c8d"/><rect x="625" y="70" width="150" height="55" rx="9"/><rect x="820" y="70" width="150" height="55" rx="9"/></g><g fill="#fff" text-anchor="middle" font-size="17"><text x="105" y="104">PV</text><text x="300" y="104">ESS＋PCS</text><text x="500" y="88">EMS</text><text x="500" y="112" font-size="13">ATS／CB／預測／資安</text><text x="700" y="104">DG</text><text x="895" y="104">關鍵負載</text></g><g stroke="#a5dfff" stroke-width="3" marker-end="url(#arr)"><path d="M180 98H220"/><path d="M375 98H415"/><path d="M585 98H620"/><path d="M775 98H815"/></g><text x="500" y="205" fill="#d9efff" text-anchor="middle" font-size="16">停電 → 自動切離台電 → PCS 建壓 → PV／ESS 優先 → SOC 低或異常時 DG 接手</text><text x="500" y="232" fill="#7fcbff" text-anchor="middle" font-size="14">驗收不只看設備通電：必須證明切換、保護協調、復電與 ≥72 小時關鍵負載情境。</text></svg></div></section>
-<section class="slide"><div class="eyebrow">04 · technical & acceptance</div><h2>技術、消防與驗收基線</h2><div class="grid3"><div class="tile"><h3>EMS／通訊</h3><p>ATS、CB、PCS、ESS、DG、既有 PV 的監控與控制；1–10 分鐘資料收集；Modbus／DNP3／IEC 61850／TCP/IP 可互通，支援 DNP3 over TCP/IP。</p></div><div class="tile"><h3>ESS／安全</h3><p>鋰電＋BMS、IP54 戶外金屬箱、可抽換模組、多層防熱失控與防延燒、產品意外險 ≥1,000 萬、UPS ≥30 分鐘、實體線路傳輸。</p></div><div class="tile"><h3>現勘／驗收</h3><p>火災風險評估、消防設計、結構簽證、防水防火；完成報告後 7 日內交 4 套紙本與 4 套 AutoCAD／PDF 竣工資料。</p></div></div></section>
-<section class="slide"><div class="eyebrow">05 · service responsibility</div><h2>八年責任應反映在成本與團隊</h2><div class="timeline"><div class="step"><b>24 小時窗口</b><span>全年受理與通報</span></div><div class="step"><b>36 小時到場</b><span>故障後進場檢修</span></div><div class="step"><b>72 小時修復</b><span>修復後 2 週內原因分析</span></div><div class="step"><b>季度／年度任務</b><span>季保養、災前後巡檢、年度演練與訓練</span></div></div><div class="goodbox" style="margin-top:34px"><b>付款與保證：</b>20% 簽約、40% 累計支出達 50% 並符合里程碑、40% 驗收／移交；履約保證金 10%，保固保證金 10%。通訊費、免費升級與 bug 修復都應在 8 年成本模型內。</div></section>
-<section class="slide"><div class="eyebrow">06 · bid risks</div><h2>投標前必須鎖定的風險</h2><div class="grid2"><div class="tile"><h3>禁止事項</h3><ul class="list"><li>設備與資通訊產品不得為中國大陸製造、品牌或供應。</li><li>專案機密、個資與未公開資料不得直接輸入生成式 AI；AI 產出交付物須經機關同意並揭露。</li><li>材料原產地與進口品報關文件須可追溯。</li></ul></div><div class="tile"><h3>投標者的證明責任</h3><ul class="list"><li>不能只寫「可供 72 小時」：需附關鍵負載、SOC、PV、DG 油耗與情境表。</li><li>不能只寫「系統可整合」：需附既有 PV／DG、ATS／CB 的單線圖與責任界面。</li><li>不能只以總價壓低：需揭露 8 年維運、保險、備品、訓練、通訊與演練的成本來源。</li></ul></div></div><p class="source">資料來源：採購需求說明書、評選方案、投標須知、建置計畫書範本、財物採購契約及特別聲明。Part 3 另針對本次計畫書與簡報做符合性審閱。</p></section>
-</main><div class="footer-controls"><button class="control" data-prev>← 上一頁</button><span class="counter" data-counter></span><button class="control" data-next>下一頁 →</button></div><script src="assets/deck.js"></script></body></html>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="屏東縣滿州國中與三地門活動中心小型防災微電網標案需求與投標決策單頁分析。">
+  <title>Part 1｜標案需求與投標決策</title>
+  <link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">屏東防災微電網</a>
+    <nav class="nav" aria-label="主要導覽"><a class="home" href="index.html">首頁</a><a class="active" href="part1.html">Part 1 標案</a><a href="part2.html">Part 2 提案</a><a href="part3.html">Part 3 審閱</a><a href="part4.html">Part 4 答詢</a></nav>
+  </header>
+  <main class="report">
+    <section class="hero">
+      <div class="eyebrow">Part 1 · tender requirements & bid decision</div>
+      <h1>標案需求與投標決策</h1>
+      <p class="lead">Danas-F-02-04-16／17 是兩場址、同一投標與同一履約責任。真正的門檻不是把設備容量做大，而是將防災供電、既有設備整合、消防結構、控制邏輯與八年維運轉成可驗收的證據。</p>
+      <div class="meta-row"><span class="meta">預算上限 33.635M</span><span class="meta">評選平均門檻 75／100</span><span class="meta">免費保固維運 8 年</span><span class="meta">災時自主供電 ≥72 小時</span></div>
+    </section>
+    <nav class="local-toc" aria-label="頁內目錄"><a href="#summary">Executive Summary</a><a href="#sites">雙場址</a><a href="#evaluation">評選</a><a href="#operation">運轉</a><a href="#acceptance">規格驗收</a><a href="#service">八年維運</a><a href="#risk">投標風險</a><a href="#actions">投標清單</a></nav>
+
+    <section id="summary" class="report-section executive">
+      <div class="section-kicker">Executive Summary</div><h2>投標決策的四個核心結論</h2>
+      <div class="summary-list">
+        <div class="summary-item"><b>兩個場址不能各自切割看待。</b>投標、報價、時程與驗收是一體；任何一處既有設備介面、結構或消防問題，都可能影響整體履約。</div>
+        <div class="summary-item"><b>40 分落在理解與可行性。</b>最有價值的文件不是品牌型錄，而是場址別單線圖、關鍵負載表、72 小時能量平衡、控制／保護矩陣與驗收腳本。</div>
+        <div class="summary-item"><b>設備交付只是八年責任的起點。</b>24 小時通報、36 小時到場、72 小時修復、季度保養、災前後巡檢、年度演練與訓練都必須納入團隊與成本。</div>
+        <div class="summary-item"><b>高規格不自動等於符合。</b>容量高於最低值仍須證明安全、載重、散熱、消防、通訊數量、既有系統整合及 72 小時供電情境。</div>
+      </div>
+    </section>
+
+    <section id="sites" class="report-section">
+      <div class="section-kicker">01 · Project scope</div><h2>雙場址設備基線與施工介面</h2>
+      <p class="section-lead">最低容量是投標底線，現勘與既有設備介面才是履約風險來源。下表保留標案設備基線，並把投標者必須回答的場址問題放在同一視圖。</p>
+      <div class="grid2">
+        <article class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-building"></use></svg></span><div><h3>滿州國中教學大樓</h3><p>屏東縣滿州鄉文化路 32 號；校園施工需維持人員動線與教學安全。</p></div></div></article>
+        <article class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-building"></use></svg></span><div><h3>三地門鄉體育館暨多功能活動中心</h3><p>屏東縣三地門鄉行政街 11 號；偏遠避難場域的物流、維修與災時可用性是重點。</p></div></div></article>
+      </div>
+      <div class="table-wrap" style="margin-top:16px"><table class="data-table">
+        <thead><tr><th>場址</th><th>太陽光電最低值</th><th>儲能最低值</th><th>柴油發電機最低值</th><th>投標者必須釐清的介面</th></tr></thead>
+        <tbody>
+          <tr><td><b>滿州國中</b><br>Danas-F-02-04-16</td><td>≥65.34 kWp</td><td>50 kW／100 kWh</td><td>≥80 kW</td><td>既有 PV、既有不可控 DG、屋頂與電氣室現況、ATS／CB 與校園施工動線。</td></tr>
+          <tr><td><b>三地門活動中心</b><br>Danas-F-02-04-17</td><td>≥21.66 kWp</td><td>250 kW／500 kWh</td><td>≥20 kW</td><td>浪板屋頂、設備基礎、消防間距、偏遠運補、關鍵負載與災時操作責任。</td></tr>
+        </tbody>
+      </table></div>
+      <div class="warning"><b>現勘輸出不應只是照片。</b>建議形成「設備點位＋單線圖＋盤體與保護容量＋通訊點表＋結構載重＋消防距離＋施工停電窗口」七項場址紀錄，並由電機、結構及消防專業人員簽核。</div>
+      <p class="source"><strong>來源：</strong>採購需求說明書、建置計畫書範本、兩場址代辦採購協議及場址附件。</p>
+    </section>
+
+    <section id="evaluation" class="report-section">
+      <div class="section-kicker">02 · Evaluation logic</div><h2>評選 40 分集中在「理解與可行性」</h2>
+      <p class="section-lead">配分顯示，評選委員最需要看見的是方案能否在場址落地、能否驗收及能否持續運轉；價格重要，但不能以漏項換取低價。</p>
+      <div class="grid2">
+        <div class="card"><h3>評選配分</h3><div class="bar-chart" aria-label="評選配分長條圖">
+          <div class="bar-row"><span>理解／可行性</span><span class="track"><span class="fill" style="width:100%"></span></span><strong>40</strong></div>
+          <div class="bar-row"><span>報價合理性</span><span class="track"><span class="fill" style="width:50%"></span></span><strong>20</strong></div>
+          <div class="bar-row"><span>團隊與業績</span><span class="track"><span class="fill" style="width:37.5%"></span></span><strong>15</strong></div>
+          <div class="bar-row"><span>進度與資源</span><span class="track"><span class="fill" style="width:37.5%"></span></span><strong>15</strong></div>
+          <div class="bar-row"><span>簡報與問答</span><span class="track"><span class="fill" style="width:25%"></span></span><strong>10</strong></div>
+        </div></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-doc"></use></svg></span><div><h3>投標文件硬條件</h3></div></div><ul class="checklist">
+          <li>服務建議書 12 份，中文，正文 100 頁內，附件不計。</li><li>簡報 10 分鐘、問答 10 分鐘；問答不能補充或改變原投標內容。</li><li>檢附近 3 年類似實績、逐項建置計畫、標單與成本分析。</li><li>一次投標，不得聯合投標或提出替代方案。</li><li>平均總評分達 75 分才具優勝廠商資格。</li>
+        </ul></div>
+      </div>
+      <div class="table-wrap" style="margin-top:16px"><table class="data-table"><thead><tr><th>評分面向</th><th>委員會尋找的證據</th><th>建議放入計畫書／簡報的位置</th></tr></thead><tbody>
+        <tr><td>理解與可行性</td><td>場址調查、72 小時能量平衡、運轉流程、單線圖、介面及測試矩陣。</td><td>正文主線；簡報用一張架構圖＋一張驗收表說清楚。</td></tr>
+        <tr><td>價格合理性</td><td>設備、施工、簽證、保險、通訊、備品及八年服務均有成本歸屬。</td><td>成本分析表與範圍對照表。</td></tr>
+        <tr><td>團隊與業績</td><td>實績規模一致、角色與責任清楚、專業證照及在地服務能力。</td><td>組織圖、RACI、實績證明附件。</td></tr>
+        <tr><td>進度與資源</td><td>關鍵路徑、長交期設備、審查／簽證、停電窗口與風險緩衝。</td><td>倒排時程、採購追蹤表、風險清單。</td></tr>
+      </tbody></table></div>
+      <p class="source"><strong>來源：</strong>評選方案、投標須知補充說明及建置計畫書範本。</p>
+    </section>
+
+    <section id="operation" class="report-section">
+      <div class="section-kicker">03 · Operating design</div><h2>孤島與復電必須形成可驗收的狀態機</h2>
+      <p class="section-lead">系統不只要能「通電」，還要在市電異常、SOC 降低、設備故障與市電恢復時自動做出安全決策。每個箭頭都應對應控制條件、保護設定與測試紀錄。</p>
+      <div class="flow" aria-label="微電網運轉架構">
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-bolt"></use></svg><b>台電／ATS</b><small>偵測停電並切離</small></div>
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-server"></use></svg><b>EMS</b><small>模式、SOC、排程與權限</small></div>
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-sun"></use></svg><b>PV</b><small>平時自用、孤島發電</small></div>
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-battery"></use></svg><b>ESS／PCS</b><small>建壓、穩頻、能量調節</small></div>
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-generator"></use></svg><b>DG</b><small>SOC 低或異常時接手</small></div>
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-building"></use></svg><b>關鍵負載</b><small>避難核心設備優先</small></div>
+      </div>
+      <div class="table-wrap" style="margin-top:18px"><table class="data-table"><thead><tr><th>系統狀態</th><th>主要控制動作</th><th>必備判定條件</th><th>驗收證據</th></tr></thead><tbody>
+        <tr><td><b>平時併網</b></td><td>PV 優先、自發自用；依機關排程進行儲能充放電。</td><td>電價時段、SOC 上下限、逆送限制、設備可用狀態。</td><td>EMS 畫面、排程紀錄、電表趨勢與防逆送測試。</td></tr>
+        <tr><td><b>市電中斷</b></td><td>ATS／CB 切離台電，PCS 建立孤島電壓與頻率。</td><td>市電失壓／欠頻、切離確認、保護聯鎖完成。</td><td>事件順序紀錄、切換時間、電壓／頻率曲線。</td></tr>
+        <tr><td><b>孤島運轉</b></td><td>PV＋ESS 優先供應關鍵負載，非必要負載依序切除。</td><td>關鍵負載表、負載優先級、PV 可用量與 SOC。</td><td>72 小時逐時能量表、負載切除及恢復測試。</td></tr>
+        <tr><td><b>SOC 低／異常</b></td><td>啟動 DG、穩定後接手或與 ESS 協作，避免深度放電。</td><td>啟動門檻、暖機、同步／切換條件、油量與故障回退。</td><td>DG 啟停、油耗、告警、失敗重試與 EPO 測試。</td></tr>
+        <tr><td><b>市電恢復</b></td><td>確認穩定後依同步／轉供程序切回併網。</td><td>電壓、頻率、相序、穩定時間與閉鎖條件。</td><td>同步檢查、ATS／CB 動作、無逆送與復歸紀錄。</td></tr>
+      </tbody></table></div>
+      <div class="danger"><b>72 小時不能只寫結論。</b>至少要列出關鍵負載 kW、每時段用電量、PV 情境、SOC 初值與下限、PCS 效率、DG 油耗／油箱、負載切除順序，以及「無日照、低日照、DG 故障、ESS 故障」等敏感度情境。</div>
+      <p class="source"><strong>來源：</strong>採購需求說明書之系統運轉邏輯、建置計畫書範本及驗收要求。</p>
+    </section>
+
+    <section id="acceptance" class="report-section">
+      <div class="section-kicker">04 · Technical & acceptance baseline</div><h2>設備規格必須對應圖說、計算、測試與簽證</h2>
+      <p class="section-lead">下列不是品牌選型摘要，而是投標者應建立的「需求—證據」矩陣。任何一欄留白，都可能在設計審查或驗收階段成為爭議。</p>
+      <div class="grid4">
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-server"></use></svg></span><div><h3>EMS／通訊</h3><p>整合 ATS、CB、PCS、ESS、DG、既有 PV；支援 Modbus、DNP3、IEC 61850、TCP/IP 等介面。</p></div></div></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-battery"></use></svg></span><div><h3>ESS／安全</h3><p>鋰電、BMS、戶外箱體、可抽換模組、熱失控防護、實體通訊與至少 30 分鐘備援。</p></div></div></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-roof"></use></svg></span><div><h3>PV／結構</h3><p>結構簽證、防水與防火，模組／支架耐候、載重、接地及防雷均需可驗證。</p></div></div></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-fire"></use></svg></span><div><h3>消防／緊急</h3><p>火災風險評估、消防圖說、告警、EPO、延燒防護、消防協調及緊急應變計畫。</p></div></div></div>
+      </div>
+      <div class="table-wrap" style="margin-top:16px"><table class="data-table"><thead><tr><th>交付主題</th><th>標案要求／責任</th><th>設計審查證據</th><th>驗收證據</th></tr></thead><tbody>
+        <tr><td>EMS 與監控</td><td>自動控制、資料蒐集、遠端監控、可視化及可攜式測試設備。</td><td>架構圖、I/O 點表、協定矩陣、權限／資安設計、BOM。</td><td>通訊點測、控制測試、畫面、告警、斷線回復與資料紀錄。</td></tr>
+        <tr><td>ESS／PCS／BMS</td><td>併網與孤島、電池安全、戶外環境、防熱失控及緊急停機。</td><td>型錄、認證、容量計算、散熱／消防、保護協調與基礎圖。</td><td>充放電、SOC／SOH、告警、EPO、絕緣、保護及孤島測試。</td></tr>
+        <tr><td>PV／INV</td><td>容量、發電、結構、防水、防火、併聯、接地及防逆送。</td><td>配置圖、結構計算、支架、穿孔／止水、單線圖與併聯資料。</td><td>絕緣、接地、發電、保護、防逆送及屋面完工檢查。</td></tr>
+        <tr><td>DG</td><td>容量、連續運轉、排煙、油料、噪音、遠端啟動及保護。</td><td>選型、油耗／油箱、防溢堤、消音箱、排煙路徑與基礎圖。</td><td>負載試車、啟停、噪音、排煙、油路、保護與 EMS 連動。</td></tr>
+        <tr><td>竣工文件</td><td>完成報告後 7 日內提交 4 套紙本及 4 套 AutoCAD／PDF 等資料。</td><td>文件清單、版次規則、技師簽證與送審追蹤。</td><td>竣工圖、測試報告、型錄、保固、操作手冊、教育訓練紀錄。</td></tr>
+      </tbody></table></div>
+      <p class="source"><strong>來源：</strong>採購需求說明書、財物採購契約、建置計畫書範本及特別聲明。</p>
+    </section>
+
+    <section id="service" class="report-section">
+      <div class="section-kicker">05 · Lifecycle responsibility</div><h2>八年免費維運要在投標當下就配置人力與成本</h2>
+      <p class="section-lead">故障時限、定期任務與軟體／通訊費用都是履約範圍。若只在計畫書寫「依規定辦理」，報價合理性與可履約性都會被質疑。</p>
+      <div class="timeline">
+        <div class="step"><b>24 小時窗口</b><span>全年受理、判級、通報與遠端初判。</span></div>
+        <div class="step"><b>36 小時到場</b><span>偏遠場址仍須安排可落實的到場機制。</span></div>
+        <div class="step"><b>72 小時修復</b><span>備品、替代運轉及原廠支援需事先規劃。</span></div>
+        <div class="step"><b>2 週內分析</b><span>修復後完成原因、處置與預防再發報告。</span></div>
+      </div>
+      <div class="table-wrap" style="margin-top:24px"><table class="data-table"><thead><tr><th>週期</th><th>履約內容</th><th>應保存紀錄</th><th>成本項目</th></tr></thead><tbody>
+        <tr><td>持續</td><td>遠端監控、告警、通訊、軟體升級與 bug 修復。</td><td>告警紀錄、工單、版本、資安事件及可用率。</td><td>監控人力、VPN／通訊、伺服器、授權與資安維護。</td></tr>
+        <tr><td>季度</td><td>1／4／7／10 月定期保養與功能檢查。</td><td>巡檢表、量測值、照片、異常與改善追蹤。</td><td>人力、交通、耗材、校驗與小型備品。</td></tr>
+        <tr><td>災前／災後</td><td>颱風或重大災害前後檢查設備與供電狀態。</td><td>災前準備、油量／SOC、災後損害與復原紀錄。</td><td>緊急出勤、臨時備料、油料及安全管制。</td></tr>
+        <tr><td>年度</td><td>防災演練、操作／維護教育訓練與年度報告。</td><td>劇本、簽到、操作紀錄、缺失與改進計畫。</td><td>講師、教材、演練人力與報告製作。</td></tr>
+      </tbody></table></div>
+      <div class="grid3" style="margin-top:16px">
+        <div class="card"><div class="metric">20%</div><div class="metric-label">簽約後第一期付款</div></div>
+        <div class="card"><div class="metric">40%</div><div class="metric-label">累計支出達 50% 並符合里程碑</div></div>
+        <div class="card"><div class="metric">40%</div><div class="metric-label">驗收、移交及文件完成</div></div>
+      </div>
+      <div class="note"><b>保證責任：</b>履約保證金 10%，保固保證金 10%。因此現金流模型須同時納入長交期設備、設計審查、施工支出、驗收文件及八年服務成本。</div>
+      <p class="source"><strong>來源：</strong>財物採購契約、採購需求說明書與建置計畫書範本。</p>
+    </section>
+
+    <section id="risk" class="report-section">
+      <div class="section-kicker">06 · Bid risk map</div><h2>高風險集中在「證明不足」與「漏列長期責任」</h2>
+      <p class="section-lead">風險不是只有設備故障；投標文件的來源、介面、數量、時程與成本若無法追溯，同樣可能造成扣分、爭議或驗收延誤。</p>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>風險</th><th>可能性</th><th>影響</th><th>警訊</th><th>投標前控制</th></tr></thead><tbody>
+        <tr><td><b>72 小時僅有宣稱</b></td><td><span class="pill bad">高</span></td><td><span class="pill bad">重大</span></td><td>沒有逐時負載、SOC、PV、油耗與故障情境。</td><td>提出兩場址能量平衡及敏感度分析。</td></tr>
+        <tr><td><b>既有 PV／DG 介面不清</b></td><td><span class="pill bad">高</span></td><td><span class="pill bad">重大</span></td><td>只寫「整合」而無單線圖、控制權與停電窗口。</td><td>完成場址別介面矩陣與 ATS／CB 聯鎖圖。</td></tr>
+        <tr><td><b>原產地／資通訊禁限</b></td><td><span class="pill warn">中</span></td><td><span class="pill bad">重大</span></td><td>BOM 沒有品牌、製造地、供應商切結與報關文件。</td><td>建立全設備／軟體原產地清冊並逐項簽核。</td></tr>
+        <tr><td><b>生成式 AI 使用不合規</b></td><td><span class="pill warn">中</span></td><td><span class="pill warn">高</span></td><td>將機密、個資或未公開資料直接輸入公共 AI。</td><td>採資料分級、去識別、機關同意與人工複核程序。</td></tr>
+        <tr><td><b>時程過度壓縮</b></td><td><span class="pill bad">高</span></td><td><span class="pill warn">高</span></td><td>忽略設備交期、技師簽證、消防及台電審查。</td><td>倒排關鍵路徑、長交期採購與審查緩衝。</td></tr>
+        <tr><td><b>八年服務漏價</b></td><td><span class="pill warn">中</span></td><td><span class="pill bad">重大</span></td><td>報價未列通訊、升級、備品、演練與偏遠出勤。</td><td>建立八年 TCO 與履約範圍對照表。</td></tr>
+      </tbody></table></div>
+      <div class="danger"><b>禁止事項：</b>設備與資通訊產品不得屬中國大陸製造、品牌或供應；材料原產地與進口報關資料要可追溯。專案機密、個資及未公開資料不得未經控管直接輸入生成式 AI，AI 產出用於交付時亦應遵守機關同意與揭露要求。</div>
+      <p class="source"><strong>來源：</strong>採購契約範本附記條款特別聲明、投標須知補充說明及採購需求說明書。</p>
+    </section>
+
+    <section id="actions" class="report-section">
+      <div class="section-kicker">07 · Bid-ready checklist</div><h2>投標前以一對一矩陣鎖定內容、證據與成本</h2>
+      <div class="grid3">
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-check"></use></svg></span><div><h3>技術與場址</h3></div></div><ul class="checklist"><li>兩場址現勘紀錄與簽核</li><li>單線圖、盤體、保護與介面矩陣</li><li>72 小時能量平衡與故障情境</li><li>結構、防水、消防與排煙方案</li></ul></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-tools"></use></svg></span><div><h3>履約與驗收</h3></div></div><ul class="checklist"><li>控制邏輯與 FAT／SAT 測試腳本</li><li>技師簽證、送審與竣工文件清單</li><li>24／36／72 小時 SLA 與備品</li><li>季度巡檢、年度演練與訓練</li></ul></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-money"></use></svg></span><div><h3>價格與合規</h3></div></div><ul class="checklist"><li>BOM、品牌、原產地與報關證明</li><li>八年 TCO、通訊、升級與保險</li><li>設備加值與每一成本項的對應</li><li>版本、單位、頁碼及附件總檢查</li></ul></div>
+      </div>
+      <div class="success"><b>決策原則：</b>每一項需求都要能回答五件事——由誰負責、設計在哪一張圖、計算依據是什麼、現場如何測試、成本列在哪一項。這套矩陣同時支撐評選、履約與驗收。</div>
+      <p class="source"><strong>本頁審閱依據：</strong>小型防災微電網建置計畫書範本、採購需求說明書、評選方案、投標須知、財物採購契約、特別聲明及兩場址附件。本文為投標分析，不取代機關書面釋疑或專業簽證。</p>
+    </section>
+  </main>
+  <button class="top-button" data-top aria-label="回到頁首">↑</button><script src="assets/report.js"></script>
+</body>
+</html>

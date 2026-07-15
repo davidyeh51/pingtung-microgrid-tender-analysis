@@ -1,11 +1,135 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Part 3｜需求符合性與一致性審閱</title><link rel="stylesheet" href="assets/deck.css"></head><body>
-<header class="topbar"><a class="brand" href="index.html">屏東防災微電網</a><nav class="nav" aria-label="簡報章節"><a class="home" href="index.html">首頁</a><a href="part1.html">Part 1 標案</a><a href="part2.html">Part 2 提案</a><a class="active" href="part3.html">Part 3 審閱</a></nav></header><main class="deck">
-<section class="slide dark"><div class="eyebrow">Part 3 · compliance & consistency review</div><h1>需求符合性與<br>文件一致性審閱</h1><p class="lead">審閱基準為採購需求、建置計畫書範本、契約義務，對照 V14 計畫書與 38 頁投標簡報。結論不是判定得標資格，而是列出評選／驗收前需要補件、改字或書面釐清的可操作事項。</p><div class="grid3"><div class="tile"><div class="metric">2</div><p>高優先補強：72 小時證明、監控設備數量。</p></div><div class="tile"><div class="metric">5</div><p>履約論證缺口：介面、SLA、排程、原產地、驗收文件。</p></div><div class="tile"><div class="metric">6+</div><p>數字／單位／版本一致性項目需校正。</p></div></div></section>
-<section class="slide"><div class="eyebrow">01 · review method</div><h2>從「宣稱」回到「可驗收的證據」</h2><div class="diagram"><svg viewBox="0 0 1000 265" role="img" aria-label="符合性審閱流程"><defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#a5dfff"/></marker></defs><g fill="#173f72" stroke="#a5dfff" stroke-width="2"><rect x="30" y="82" width="210" height="75" rx="10"/><rect x="285" y="82" width="210" height="75" rx="10"/><rect x="540" y="82" width="210" height="75" rx="10"/><rect x="795" y="82" width="170" height="75" rx="10" fill="#0c7d8e"/></g><g fill="#fff" text-anchor="middle" font-size="17"><text x="135" y="113">招標／契約要求</text><text x="135" y="137" font-size="13">功能、數量、時程、服務</text><text x="390" y="113">計畫書／簡報主張</text><text x="390" y="137" font-size="13">規格、容量、流程、經費</text><text x="645" y="113">可驗證證據</text><text x="645" y="137" font-size="13">圖說、計算、BOM、測試表</text><text x="880" y="113">評選／驗收</text><text x="880" y="137" font-size="13">滿足或待補正</text></g><g stroke="#a5dfff" stroke-width="3" marker-end="url(#arr3)"><path d="M240 120H280"/><path d="M495 120H535"/><path d="M750 120H790"/></g><text x="500" y="216" fill="#d9efff" text-anchor="middle" font-size="16">容量高於規範，只能證明「數字較大」；不能取代 72 小時、既有設備整合與八年服務的逐項證明。</text></svg></div></section>
-<section class="slide"><div class="eyebrow">02 · critical gaps</div><h2>高優先：兩項可能影響規格完整性的缺口</h2><table class="risk-table"><thead><tr><th>議題</th><th>需求／應交付內容</th><th>計畫書／簡報現況</th><th>建議修正</th></tr></thead><tbody><tr><td><span class="pill bad">重大</span><br><b>72 小時證明</b></td><td>災時至少 72 小時自主供電。</td><td>兩份文件均作結論式宣稱，未見關鍵負載清單、逐時負載曲線、SOC 下限、PV 假設、DG 油耗／油箱與啟停門檻的能量平衡。</td><td>每場址提出 72 小時情境表與曲線，至少涵蓋無日照、低日照、PV／ESS 故障、DG 單獨供電及負載切除。</td></tr><tr><td><span class="pill bad">重大</span><br><b>監控設備數量</b></td><td>需求說明載有 3 套遠端監控架構、3 處 43 吋可視化螢幕、3 只可攜式連線測試器。</td><td>計畫書符合性表寫 2 套場址主機、2 處螢幕、2 只測試器；簡報只泛稱可視化／遠端監控。</td><td>先以最新澄清確認「3」的定義，再依最終數量更新 BOM、報價、配置圖及驗收清單；不得只用泛稱「依規定辦理」。</td></tr></tbody></table></section>
-<section class="slide"><div class="eyebrow">03 · technical proof</div><h2>技術方案已有骨架，但四個接口尚需落地</h2><div class="grid2"><div class="tile"><h3>既有 PV／既有 DG 整合</h3><p>需求包含既有 PV 及既有不可控 DG 的協調。計畫書提到「盤點既有設施」，但尚缺每一場址的單線圖、ATS／CB 聯鎖、保護協調、控制權責、停電施工與故障旁路方案。</p><span class="pill warn">需補場址別介面矩陣</span></div><div class="tile"><h3>EMS 指定排程</h3><p>提案有智慧排程與電價表管理，但未明確鎖定需求的離峰 24:00–06:00 充電、夜尖峰 18:00–20:00 放電，以及機關可調整的設定、權限與測試案例。</p><span class="pill warn">需補排程畫面／測試腳本</span></div><div class="tile"><h3>ESS 停電維持與通訊</h3><p>提案說明實體線路與資安，但未將「平時電源中斷可獨立運轉至少 30 分鐘」明確連到 UPS 容量、負載與驗收方法。</p><span class="pill warn">需補 UPS 證明與驗收條件</span></div><div class="tile"><h3>消防風險與測試</h3><p>提案描述氣溶膠、EPO、消防簽證與風險報告；建議再把火災風險評估、消防設計圖說、消防單位協調與測試紀錄列成可交付里程碑。</p><span class="pill info">由敘述轉成文件清單</span></div></div></section>
-<section class="slide"><div class="eyebrow">04 · lifecycle & price</div><h2>八年履約與報價：不要讓「概括承諾」變成扣分點</h2><table class="risk-table"><thead><tr><th>審閱點</th><th>目前觀察</th><th>應補強內容</th></tr></thead><tbody><tr><td><b>故障 SLA</b></td><td>文件明載 24 小時窗口；未明確承諾 36 小時到場、72 小時修復、修復後 2 週事故分析。</td><td>列入維運 SLA、通報樹、備品與偏遠場址到場機制，並放入合約對照表。</td></tr><tr><td><b>季度與年度義務</b></td><td>正文有每季巡檢，但維運表另寫「每年巡檢一次」；未具體寫年度防災演練與每年訓練。</td><td>統一為每年 1／4／7／10 月保養；補災前後巡檢、年度演練、年度訓練與報告格式。</td></tr><tr><td><b>通訊、升級與原產地</b></td><td>主張台灣在地產品與 8 年維運，但未見完整設備／軟體原產地聲明、通訊費、免費升級／bug 修復與 AI 特別聲明的逐項清單。</td><td>建立 BOM／原產地／供應商切結、8 年費用表、更新服務承諾及資通訊／生成式 AI 合規清單。</td></tr><tr><td><b>價格壓力</b></td><td>總價 33.620M，距 33.635M 上限僅 15 千元；同時宣稱容量加值，監控設備與 8 年服務細項應有清楚的成本歸屬。</td><td>重做可追溯的分項成本與履約範圍表，避免被認定漏項或價格合理性不足。</td></tr></tbody></table></section>
-<section class="slide"><div class="eyebrow">05 · hard inconsistencies</div><h2>計畫書與簡報：需先修正的硬性不一致</h2><table class="risk-table"><thead><tr><th>項目</th><th>計畫書</th><th>投標簡報</th><th>影響與修正</th></tr></thead><tbody><tr><td><b>笨港二次變電所實績</b></td><td>2.5 MW／4.23 MWh</td><td>2.5 MW／3.14 MWh（第 7 頁）</td><td><span class="pill bad">數字衝突</span><br>核對驗收／業主證明後統一；實績是評選證據，不能留下兩個容量版本。</td></tr><tr><td><b>員工規模</b></td><td>員工 165 人（營運概況）</td><td>「員工近 200 人」（第 4 頁）</td><td><span class="pill warn">口徑不一</span><br>標示資料基準日、全職／集團／含合作人力的定義，選用可佐證的單一數字。</td></tr><tr><td><b>ESS 能量單位</b></td><td>三地門 360 kW／720 kWh；滿州 120 kW／240 kWh</td><td>第 13、14 頁將 720 kWh／240 kWh 多處寫成 kW</td><td><span class="pill bad">技術單位錯誤</span><br>功率與能量混用會直接傷害技術可信度，所有表格、圖面與口頭簡報須一次校正。</td></tr><tr><td><b>版本日期</b></td><td>V14 final：2026-06-27</td><td>檔名 20260710；封面標示 115-07-14</td><td><span class="pill warn">版本控管不足</span><br>建立封面版號、修訂日期、資料截止日與附件清單，避免不同日期的資料混用。</td></tr></tbody></table></section>
-<section class="slide"><div class="eyebrow">06 · data quality</div><h2>簡報內部還有幾個「先校稿再上台」的訊號</h2><div class="grid3"><div class="tile"><h3>DG 單位</h3><p>第 7 頁實績敘述把柴發寫成「500 kWh」；柴油發電機通常應以 kW 表示額定功率，應回查原始實績資料。</p><span class="pill bad">單位檢核</span></div><div class="tile"><h3>儲能實績單位</h3><p>第 10 頁出現「2 MW／1.37 kWh」；若為儲能容量，極可能缺少 M，需從案場資料與業主證明校正。</p><span class="pill bad">單位檢核</span></div><div class="tile"><h3>預測準確率</h3><p>計畫書主張 PV MAPE＜3%、負載 MAPE＜5%，但未說明樣本期間、基準模型、場址資料可得性與驗證方法。</p><span class="pill warn">主張需佐證</span></div><div class="tile"><h3>監控設備</h3><p>計畫書符合性表採「2 套／2 處／2 只」，與需求文件「3」的用語衝突，不能僅靠簡報的可視化概念掩蓋。</p><span class="pill bad">數量需澄清</span></div><div class="tile"><h3>維運頻率</h3><p>維運表寫每年一次巡檢，正文另列每季 1／4／7／10 月；雖非簡報差異，仍是正式計畫書內的履約矛盾。</p><span class="pill bad">文件內矛盾</span></div><div class="tile"><h3>規格與成本</h3><p>加大 ESS／DG／PV 與接近上限的價格可以是優勢，但必須把監控、8 年服務與備品全部納入可追溯成本。</p><span class="pill warn">價格合理性</span></div></div></section>
-<section class="slide"><div class="eyebrow">07 · correction plan</div><h2>建議的修正優先序</h2><div class="timeline"><div class="step"><b>48 小時：止血</b><span>修正 kW／kWh、笨港容量、員工數、日期／版本、年度／季度巡檢等明顯錯字。</span></div><div class="step"><b>下一版：補規格</b><span>補監控設備數量、UPS、既有 PV／DG 介面與完整 BOM／原產地。</span></div><div class="step"><b>答詢前：補證明</b><span>72 小時負載與油耗計算、控制／測試矩陣、消防交付物、SLA 與 8 年成本。</span></div><div class="step"><b>送件前：鎖版本</b><span>同一份數據主檔產出計畫書、簡報、標單與附件；做逐項符合性簽核。</span></div></div><div class="goodbox" style="margin-top:32px"><b>最重要的調整：</b>把「優於規範」改寫成「需求條款 → 提案規格 → 圖說／計算／測試／成本證據」的一對一矩陣。這樣才能同時支撐 40 分可行性、20 分價格合理性與驗收風險控管。</div><p class="source">審閱依據：採購需求說明書、建置計畫書範本、契約及特別聲明；計畫書 V14；投標簡報第 1–38 頁。本頁為文件審閱意見，不取代機關書面釋疑或專業簽證。</p></section>
-</main><div class="footer-controls"><button class="control" data-prev>← 上一頁</button><span class="counter" data-counter></span><button class="control" data-next>下一頁 →</button></div><script src="assets/deck.js"></script></body></html>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="屏東防災微電網投標計畫書與簡報的需求符合性、證據缺口、數字單位及版本一致性單頁審閱。">
+  <title>Part 3｜符合性與一致性審閱</title>
+  <link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="index.html">屏東防災微電網</a><nav class="nav" aria-label="主要導覽"><a class="home" href="index.html">首頁</a><a href="part1.html">Part 1 標案</a><a href="part2.html">Part 2 提案</a><a class="active" href="part3.html">Part 3 審閱</a><a href="part4.html">Part 4 答詢</a></nav></header>
+  <main class="report">
+    <section class="hero">
+      <div class="eyebrow">Part 3 · compliance & consistency review</div>
+      <h1>符合性與一致性審閱</h1>
+      <p class="lead">審閱基準為採購需求、建置計畫書範本與契約義務，對照 V14 計畫書及 38 頁投標簡報。結論不是判定得標資格，而是指出評選、設計審查與驗收前必須補件、改字或書面釐清的項目。</p>
+      <div class="meta-row"><span class="meta">2 項高優先規格缺口</span><span class="meta">5 類履約論證不足</span><span class="meta">6+ 項數字／單位／版本問題</span><span class="meta">審閱原則：宣稱 ≠ 證明</span></div>
+    </section>
+    <nav class="local-toc" aria-label="頁內目錄"><a href="#summary">Executive Summary</a><a href="#method">審閱方法</a><a href="#critical">重大缺口</a><a href="#interfaces">技術介面</a><a href="#lifecycle">履約價格</a><a href="#inconsistency">硬性不一致</a><a href="#quality">資料品質</a><a href="#roadmap">修正路線</a></nav>
+
+    <section id="summary" class="report-section executive">
+      <div class="section-kicker">Executive Summary</div><h2>提案可用，但需要從「完整敘事」升級成「完整證據」</h2>
+      <div class="summary-list">
+        <div class="summary-item"><b>最先補 72 小時證明。</b>兩份文件均宣稱可達防災續航，但尚未見場址別關鍵負載、逐時能量、SOC、PV 情境、DG 油耗／油箱與負載切除的完整計算。</div>
+        <div class="summary-item"><b>遠端監控數量必須書面釐清。</b>需求文件出現 3 套／3 處／3 只，計畫書符合性表卻採 2 套／2 處／2 只；須依最新釋疑同步更新 BOM、報價與驗收表。</div>
+        <div class="summary-item"><b>實績、單位與版本錯誤會傷害可信度。</b>笨港容量、員工人數、kW／kWh、日期版本及簡報內 DG／儲能單位須一次校正，不能留待口頭問答補充。</div>
+        <div class="summary-item"><b>八年服務與價格缺少逐項對照。</b>24／36／72 小時 SLA、季度巡檢、年度演練／訓練、通訊、升級、原產地與備品需要形成契約對照及成本表。</div>
+      </div>
+    </section>
+
+    <section id="method" class="report-section">
+      <div class="section-kicker">01 · Review method</div><h2>從需求條款一路追到可驗收證據</h2>
+      <p class="section-lead">容量高於規範只能證明「數字較大」，不能取代功能、介面、安全、八年服務及驗收證據。審閱採四階段追蹤，每一階段都要能回到文件頁碼與責任人。</p>
+      <div class="flow" aria-label="符合性審閱流程">
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-doc"></use></svg><b>招標／契約要求</b><small>功能、數量、時程、服務</small></div>
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-check"></use></svg><b>計畫書／簡報主張</b><small>規格、容量、流程、經費</small></div>
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-tools"></use></svg><b>設計與履約證據</b><small>圖說、計算、BOM、簽證</small></div>
+        <div class="flow-node"><svg><use href="assets/icons.svg#i-shield"></use></svg><b>測試與驗收</b><small>條件、結果、紀錄、缺失</small></div>
+      </div>
+      <div class="table-wrap" style="margin-top:18px"><table class="data-table"><thead><tr><th>判定</th><th>定義</th><th>本案例子</th><th>處理方式</th></tr></thead><tbody>
+        <tr><td><span class="pill good">已載明</span></td><td>需求與提案規格有明確對應，且已有可驗證輸出。</td><td>提案容量、LFP／BMS 架構、基本施工時程。</td><td>保留並補精確頁碼、型錄、圖說及責任人。</td></tr>
+        <tr><td><span class="pill warn">論證不足</span></td><td>方向正確，但缺計算、圖說、測試、SLA 或成本佐證。</td><td>72 小時、既有設備整合、UPS、EMS 排程。</td><td>補文件與驗收條件，不可只寫「依規定辦理」。</td></tr>
+        <tr><td><span class="pill bad">不一致</span></td><td>計畫書、簡報或需求間的數字、單位、數量、日期互相衝突。</td><td>笨港容量、kW／kWh、監控數量、維運頻率。</td><td>以原始證明或機關釋疑建立唯一主檔後同步改版。</td></tr>
+        <tr><td><span class="pill info">需釋疑</span></td><td>需求文字可能有版本、數量或適用範圍不明。</td><td>3 套遠端監控／3 處螢幕／3 只測試器的配置定義。</td><td>取得書面釋疑，再更新 BOM、報價、配置與驗收清單。</td></tr>
+      </tbody></table></div>
+      <p class="source"><strong>審閱基準：</strong>採購需求說明書、建置計畫書範本、財物採購契約與特別聲明，對照計畫書 V14 與投標簡報。</p>
+    </section>
+
+    <section id="critical" class="report-section">
+      <div class="section-kicker">02 · Critical gaps</div><h2>兩項高優先缺口可能直接影響規格完整性</h2>
+      <div class="grid2">
+        <article class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-clock"></use></svg></span><div><span class="pill bad">重大</span><h3 style="margin-top:8px">72 小時自主供電證明</h3></div></div><p>目前以結論式文字宣稱兩場址可供電至少 72 小時，但未見足以重算的關鍵負載清單、逐時負載曲線、SOC 初值與下限、PCS 效率、PV 低日照／無日照假設、DG 油耗／油箱、啟停門檻與負載切除邏輯。</p></article>
+        <article class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-server"></use></svg></span><div><span class="pill bad">重大</span><h3 style="margin-top:8px">遠端監控設備數量</h3></div></div><p>需求說明載有 3 套遠端監控架構、3 處 43 吋可視化螢幕、3 只可攜式連線測試器；計畫書符合性表卻寫 2 套場址主機、2 處螢幕及 2 只測試器，簡報只泛稱可視化／遠端監控。</p></article>
+      </div>
+      <div class="table-wrap" style="margin-top:16px"><table class="data-table"><thead><tr><th>缺口</th><th>送件前必補</th><th>答詢前必備</th><th>驗收時判定</th></tr></thead><tbody>
+        <tr><td>72 小時</td><td>兩場址關鍵負載、能量平衡、油耗、油箱、SOC 與情境假設。</td><td>一張負載曲線、一張能量流、一張最不利情境表。</td><td>依核定情境做模擬／測試，結果與 EMS 紀錄可追溯。</td></tr>
+        <tr><td>監控數量</td><td>取得機關書面釋疑；BOM、報價、點位及配置圖採同一數量。</td><td>說明「3」是兩場址加中央端，或其他核定架構。</td><td>逐套、逐處、逐只點交並完成連線、畫面與攜行測試。</td></tr>
+      </tbody></table></div>
+      <div class="danger"><b>修正原則：</b>不能在問答時口頭新增原投標文件沒有的設備或改變投標內容。需要新增或調整的項目，應在正式投標版本鎖定前完成；需求有歧義則先取得書面釋疑。</div>
+    </section>
+
+    <section id="interfaces" class="report-section">
+      <div class="section-kicker">03 · Technical proof</div><h2>技術方案已有骨架，五個介面仍要落地</h2>
+      <p class="section-lead">以下問題不是否定設備能力，而是要求把「能做到」寫成「由誰、在何處、依何條件做到，以及如何測試」。</p>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>介面／義務</th><th>需求</th><th>計畫書／簡報現況</th><th>應補證據</th><th>優先級</th></tr></thead><tbody>
+        <tr><td><b>既有 PV／DG 整合</b></td><td>協調既有 PV 與既有不可控 DG，完成併離網與保護。</td><td>提到盤點既有設施，但缺場址別單線圖、ATS／CB 聯鎖、控制權責、停電施工與故障旁路。</td><td>單線圖、介面矩陣、保護協調、控制權與停電窗口。</td><td><span class="pill bad">高</span></td></tr>
+        <tr><td><b>EMS 指定排程</b></td><td>離峰 24:00–06:00 充電、夜尖峰 18:00–20:00 放電，機關可調。</td><td>有智慧排程與電價表管理，但未明確鎖定時段、權限與測試案例。</td><td>排程畫面、參數權限、SOC 限制、例外處理與測試腳本。</td><td><span class="pill warn">中高</span></td></tr>
+        <tr><td><b>ESS 停電維持</b></td><td>平時電源中斷後，必要控制／通訊可獨立運轉至少 30 分鐘。</td><td>描述實體線路與資安，未將 30 分鐘連到 UPS 負載、容量與驗收方法。</td><td>UPS 容量計算、供電清單、斷電測試與告警紀錄。</td><td><span class="pill warn">中高</span></td></tr>
+        <tr><td><b>消防風險</b></td><td>火災風險評估、消防設計、延燒防護、應變與簽證。</td><td>有氣溶膠、EPO、防火牆、消防簽證與風險報告敘述。</td><td>圖說、間距、防火牆剖面、告警聯動、審查紀錄與測試表。</td><td><span class="pill warn">中高</span></td></tr>
+        <tr><td><b>地端／遠端控制</b></td><td>災時須持續運轉，遠端中斷不得使場址失控。</td><td>有 Web EMS、VPN、遠端監控與地端資料蒐集架構。</td><td>控制主從、離線模式、失聯回退、帳號權限、稽核與資安分區。</td><td><span class="pill warn">中高</span></td></tr>
+      </tbody></table></div>
+      <div class="success"><b>可保留的基礎：</b>提案已具 LFP／BMS、PCS、EMS、多協定、消防及孤島運轉的整體骨架。補強重點是場址別圖說、控制權、觸發條件與測試判定，不需要重新發明整個架構。</div>
+      <p class="source"><strong>來源：</strong>採購需求說明書之 EMS、ESS、系統運轉及消防要求；計畫書 2.2–2.5、5.2–5.4、6.6、9.5；簡報 p14–30。</p>
+    </section>
+
+    <section id="lifecycle" class="report-section">
+      <div class="section-kicker">04 · Lifecycle & price</div><h2>概括承諾無法支撐八年履約與 33.620M 報價</h2>
+      <p class="section-lead">服務內容如果沒有頻率、時限、輸出與成本，就是未來爭議的來源。下表把計畫書現況與應補項目放在一起。</p>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>審閱點</th><th>文件現況</th><th>風險</th><th>應補強內容</th></tr></thead><tbody>
+        <tr><td><b>故障 SLA</b></td><td>明載 24 小時服務窗口；未完整承諾 36 小時到場、72 小時修復及修復後 2 週原因分析。</td><td>履約時限與責任不完整。</td><td>納入 SLA、判級、通報樹、偏遠到場、備品與事故報告格式。</td></tr>
+        <tr><td><b>季度／年度義務</b></td><td>正文列 1／4／7／10 月巡檢，維運表另寫每年一次；年度演練與每年訓練未完全具體化。</td><td>同一文件內頻率矛盾。</td><td>統一季度保養，補災前後巡檢、年度演練、年度訓練及輸出。</td></tr>
+        <tr><td><b>通訊與升級</b></td><td>主張八年維運及遠端 HMI，但通訊費、軟體免費升級／bug 修復未形成逐年成本。</td><td>漏價或後續收費爭議。</td><td>八年費用表、版本政策、資安更新、通訊與伺服器責任。</td></tr>
+        <tr><td><b>原產地與 AI 合規</b></td><td>提到台灣在地產品，未見完整設備／軟體原產地聲明與生成式 AI 合規清單。</td><td>禁限產品或資料治理風險。</td><td>BOM／原產地／供應商切結、進口證明、資料分級與 AI 使用程序。</td></tr>
+        <tr><td><b>價格壓力</b></td><td>總價 33.620M，距 33.635M 上限 15,000 元，同時提出容量加值。</td><td>監控數量、簽證、消防、備品或八年服務漏列即無緩衝。</td><td>可追溯分項成本、履約範圍表及八年 TCO。</td></tr>
+      </tbody></table></div>
+      <div class="grid3" style="margin-top:16px"><div class="card"><div class="metric">15,000</div><div class="metric-label">投標價與總上限的差額（元）</div></div><div class="card"><div class="metric">0.045%</div><div class="metric-label">約占預算上限的餘裕</div></div><div class="card"><div class="metric">8 年</div><div class="metric-label">必須在價格內支撐的免費維運期</div></div></div>
+      <p class="source"><strong>來源：</strong>財物採購契約、採購需求說明書、計畫書維運及經費章節；百分比為 15,000／33,635,000，四捨五入。</p>
+    </section>
+
+    <section id="inconsistency" class="report-section">
+      <div class="section-kicker">05 · Hard inconsistencies</div><h2>四項硬性不一致應在下一版前全部歸零</h2>
+      <p class="section-lead">這些不是寫作風格問題，而是委員可以直接對照發現的數據衝突。實績與技術單位一旦錯誤，會連帶削弱其他正確主張的可信度。</p>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>項目</th><th>計畫書</th><th>投標簡報</th><th>影響</th><th>修正方式</th></tr></thead><tbody>
+        <tr><td><b>笨港二次變電所實績</b></td><td>2.5 MW／4.23 MWh</td><td>2.5 MW／3.14 MWh（p7）</td><td><span class="pill bad">數字衝突</span><br>實績是評選證據。</td><td>核對驗收／業主證明，建立唯一容量版本並同步所有頁面。</td></tr>
+        <tr><td><b>員工規模</b></td><td>員工 165 人</td><td>員工近 200 人（p4）</td><td><span class="pill warn">口徑不一</span><br>可能涉及基準日或人員定義。</td><td>標示資料基準日與全職／集團／合作人力定義，選用可佐證數字。</td></tr>
+        <tr><td><b>ESS 能量單位</b></td><td>三地門 360 kW／720 kWh；滿州 120 kW／240 kWh。</td><td>p13、p14 多處把 720 kWh／240 kWh 寫成 kW。</td><td><span class="pill bad">技術單位錯誤</span><br>功率與能量混用。</td><td>用單一資料主檔產出計畫書、簡報、圖面與口頭講稿。</td></tr>
+        <tr><td><b>版本日期</b></td><td>V14 final：2026-06-27</td><td>檔名 20260710；封面標示 115-07-14。</td><td><span class="pill warn">版控不足</span><br>不同日期資料可能混用。</td><td>封面列版號、修訂日期、資料截止日與附件清單，送件前鎖版。</td></tr>
+      </tbody></table></div>
+      <p class="source"><strong>來源：</strong>計畫書 V14 營運概況與實績章節；簡報 p4、p7、p13–14 及封面。</p>
+    </section>
+
+    <section id="quality" class="report-section">
+      <div class="section-kicker">06 · Data quality</div><h2>簡報內部仍有六個「先校稿再上台」的訊號</h2>
+      <div class="grid3">
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-generator"></use></svg></span><div><h3>DG 單位</h3><p>簡報 p7 把柴發寫成「500 kWh」；柴油發電機額定功率通常應以 kW 表示，需回查原始實績。</p><span class="pill bad">單位檢核</span></div></div></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-battery"></use></svg></span><div><h3>儲能實績單位</h3><p>簡報 p10 出現「2 MW／1.37 kWh」；若為儲能能量，極可能缺少 M，需以案場證明校正。</p><span class="pill bad">單位檢核</span></div></div></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-server"></use></svg></span><div><h3>預測準確率</h3><p>計畫書主張 PV MAPE＜3%、負載 MAPE＜5%，但缺樣本期間、基準模型、資料可得性與驗證方法。</p><span class="pill warn">主張需佐證</span></div></div></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-network"></use></svg></span><div><h3>監控設備</h3><p>計畫書採 2 套／2 處／2 只，與需求文件「3」的用語衝突；簡報的可視化概念不能取代數量。</p><span class="pill bad">數量需釋疑</span></div></div></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-clock"></use></svg></span><div><h3>維運頻率</h3><p>維運表寫每年一次，正文另列每季 1／4／7／10 月，是正式計畫書內部的履約矛盾。</p><span class="pill bad">文件內矛盾</span></div></div></div>
+        <div class="card"><div class="icon-head"><span class="icon-box"><svg><use href="assets/icons.svg#i-money"></use></svg></span><div><h3>規格與成本</h3><p>ESS／DG／PV 加值與接近上限的價格可以是優勢，但監控、八年服務與備品必須納入成本。</p><span class="pill warn">價格合理性</span></div></div></div>
+      </div>
+      <div class="warning"><b>校稿不能只靠人工看字。</b>建議建立「欄位主檔」：案名、場址、設備功率、設備能量、實績容量、員工數、日期、數量、價格與來源證明，由同一主檔產出正文、簡報、標單及附件索引。</div>
+    </section>
+
+    <section id="roadmap" class="report-section">
+      <div class="section-kicker">07 · Correction roadmap</div><h2>修正順序：先止血，再補規格與證明，最後鎖版</h2>
+      <div class="timeline">
+        <div class="step"><b>48 小時｜止血</b><span>修正 kW／kWh、笨港容量、員工數、日期／版本與巡檢頻率等明顯錯誤。</span></div>
+        <div class="step"><b>下一版｜補規格</b><span>完成監控數量釋疑，補 UPS、既有 PV／DG 介面、BOM 與原產地。</span></div>
+        <div class="step"><b>答詢前｜補證明</b><span>完成 72 小時、控制／測試矩陣、消防交付物、SLA 及八年成本。</span></div>
+        <div class="step"><b>送件前｜鎖版本</b><span>由單一資料主檔產出全部文件，做逐項符合性、頁碼與附件簽核。</span></div>
+      </div>
+      <div class="table-wrap" style="margin-top:24px"><table class="data-table"><thead><tr><th>成果</th><th>責任角色</th><th>完成定義</th><th>不可接受的替代</th></tr></thead><tbody>
+        <tr><td>需求符合性矩陣</td><td>專案經理＋技術主管</td><td>每條需求都有提案頁碼、圖說、計算、測試、成本及責任人。</td><td>只寫「符合」或「依規定辦理」。</td></tr>
+        <tr><td>數據主檔</td><td>文件管制</td><td>實績、容量、單位、價格、日期與來源證明唯一。</td><td>計畫書與簡報各自人工輸入。</td></tr>
+        <tr><td>72 小時模型</td><td>EMS／電機／設備團隊</td><td>兩場址逐時可重算，含最不利與設備故障情境。</td><td>只有總容量除以平均負載的簡化結論。</td></tr>
+        <tr><td>測試矩陣</td><td>整合測試負責人</td><td>每項功能有前置條件、步驟、判定值、紀錄與失敗回退。</td><td>驗收時臨場決定如何測。</td></tr>
+      </tbody></table></div>
+      <div class="success"><b>最重要的改寫：</b>把「優於規範」改成「需求條款 → 提案規格 → 場址設計 → 計算／圖說 → 測試／簽證 → 成本與八年責任」。這條證據鏈可同時支撐 40 分可行性、20 分價格合理性與後續驗收。</div>
+      <p class="source"><strong>本頁審閱依據：</strong>採購需求說明書、建置計畫書範本、財物採購契約及特別聲明；計畫書 V14；投標簡報 p1–38。本文為文件審閱意見，不取代機關書面釋疑或專業簽證。</p>
+    </section>
+  </main>
+  <button class="top-button" data-top aria-label="回到頁首">↑</button><script src="assets/report.js"></script>
+</body>
+</html>
